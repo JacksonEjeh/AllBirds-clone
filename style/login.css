@@ -106,9 +106,9 @@ span {
 }
 .r-approach h2 {
     font-size: 2rem;
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     display: flex;
-    padding-left: 66px;
+    padding-left: 0px;
 }
 .r-approach-container {
     display: flex;
