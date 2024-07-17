@@ -19,6 +19,7 @@ body {
     /* max-width: 1200px; */
     background-color: #f1ebe7;
     gap: 145px;
+    padding-top: 150px;
 }
 .login, .register {
     width: 30%;
@@ -64,7 +65,7 @@ button:hover {
     color: black;
     font-weight: bold;
 }
-a {
+.login_a{
     color: #000;
     text-decoration: underline;
     font-size: 14px;
@@ -73,7 +74,7 @@ a {
     font-weight: bold;
     text-transform: uppercase;
 }
-a:hover {
+.login_a:hover {
     text-decoration: underline;
 }
 .checkbox-container {
@@ -84,7 +85,7 @@ a:hover {
 .checkbox-container input {
     margin-right: 10px;
 }
-p {
+.allP {
     font-size: 14px;
     line-height: 25px;
     letter-spacing: 1px;

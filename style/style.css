@@ -16,6 +16,7 @@ header {
     position: relative;
     max-width: 88%;
     margin: 0 auto;
+    padding-top: 50px;
 }
 header img {
     width: 100%;

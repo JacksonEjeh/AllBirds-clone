@@ -128,11 +128,14 @@ body {
     justify-content: center;
 }
 .image-label{
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 .image-label img{
-    width: 83vw;
+    width: 100%;
+    /* width: 83vw; */
 }
 /* SLIDER DESIGN */
 

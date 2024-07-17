@@ -1,0 +1,672 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.jproduct_container{
+    display: flex;
+    margin-top: 50px;
+}
+.jproduct_preview{
+    width: 9%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.jproduct_holder{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 10px;
+}
+.jproduct_image{
+    background-color: #f5f5f5;
+    position: relative;
+}
+.jproduct_details{
+    padding: 0 20px;
+    padding-left: 60px;
+}
+.jproduct_previewBox{
+    cursor: pointer;
+    height: 75px;
+    width: 75px;
+    background-color: #f5f5f5;
+}
+.jproduct_price{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.jproduct_price div{
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+.jproduct_price div p{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 13px;
+}
+.jproduct_rating{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.jproduct_type{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.jproduct_rating a{
+    color: black;
+}
+.jproduct_color_holder{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.jproduct_color1{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to bottom right, black 50%,white 50%);
+    border-radius: 50%;
+    border: .5px solid grey;
+}
+.jproduct_color2{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to bottom right, #888688 50%,white 50%);
+    border-radius: 50%;
+    border: .5px solid grey;
+}
+.jproduct_color3{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to bottom right, #E4E5E6 50%,white 50%);
+    border-radius: 50%;
+    border: .5px solid grey;
+}
+.jproduct_color4{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to bottom right, black 50%,#5C5D60 50%);
+    border-radius: 50%;
+    border: .5px solid grey;
+}
+.jproduct_color5{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to bottom right, #2C333E 50%,white 50%);
+    border-radius: 50%;
+    border: .5px solid grey;
+}
+.jproduct_size{
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jproduct_size:hover{
+    background-color: #00000034;
+    z-index: 0;
+}
+.jproduct_size_holder{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+.jclassic{
+    font-size: 13px;
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+}
+.sizeText{
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+.sizeText1{
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.sizeText a{
+    color: black;
+    font-weight: bold;
+}
+.jproduct_btn{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #D3D4D5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1.5px;;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+.jproduct_addCart{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: none;
+}
+.active_jproduct_size{
+    background-color: black;
+    color: white;
+}
+
+
+.jAllBirdHolder9{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+.jAllBird9{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+}
+
+.jUp_down9{
+    position: relative;
+}
+.opacity{
+    opacity: 0;
+}
+.jdownArrow9{
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.jAllBirdHide9 p{
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 13px;
+    line-height: 20px;
+}
+.jhide p{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+.jAllBirdHide9{
+    padding: 10px 0;
+    display: none;
+}
+.jAllBirdHolder9 h5{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.jproduct_navigation a{
+    font-family: sans-serif;
+    font-size: 11px;
+    color: black;
+    text-decoration: none;
+}
+.jproduct_navigation{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.jproduct_title{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.jtreeRunner_holder{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    margin: 20px;
+    margin-bottom: 50px;
+}
+.jtreeRunner1{
+    padding-left: 60px;
+}
+.jtreeRunner_title{
+    background-color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.jtreeRunner_title div{
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+.jAllBird91{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.jAllBirdHolder91{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding: 5px 0;
+} 
+.jUp_down91{
+    position: relative;
+}
+.opacity91{
+    opacity: 0;
+}
+.jdownArrow91{
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.jhide p{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+.jAllBirdHide91{
+    padding: 10px 0;
+    display: none;
+}
+.jAllBirdHolder91 h5{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+
+
+.jAllBird912{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.jAllBirdHolder912{
+    border-top: 1px solid #ddd;
+    padding: 5px 0;
+} 
+.jUp_down912{
+    position: relative;
+}
+.opacity912{
+    opacity: 0;
+}
+.jdownArrow912{
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.jhide912 p{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+.jhide912 ul{
+    margin-top: 5px;
+}
+.jhide912 ul li{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 20px;
+}
+.jAllBirdHide912{
+    padding: 10px 0;
+    display: none;
+}
+.jAllBirdHolder912 h5{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+
+
+.jAllBird913{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.jAllBirdHolder913{
+    border-top: 1px solid #ddd;
+    padding: 5px 0;
+} 
+.jUp_down913{
+    position: relative;
+}
+.opacity913{
+    opacity: 0;
+}
+.jdownArrow913{
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.jhide913 p{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 20px;
+}
+.jhide913 ol li{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.jAllBirdHide913{
+    padding: 10px 0;
+    display: none;
+}
+.jAllBirdHolder913 h5{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+
+
+.jAllBird914{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.jAllBirdHolder914{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+} 
+.jUp_down914{
+    position: relative;
+}
+.opacity914{
+    opacity: 0;
+}
+.jdownArrow914{
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.jhide914 p{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+.jAllBirdHide914{
+    padding: 10px 0;
+    display: none;
+    /* background-color: white; */
+}
+.jAllBirdHolder914 h5{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.jConsider_holder{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.jshoesimg{
+    transition: .5s all ease-in-out;
+}
+.jConsider:hover .jshoesimg{
+    transform: scale(1.1);
+}
+.jConsider{
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.jConsider_image{
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+.jConsider_header{
+    padding: 20px 0;
+}
+.jConsider_title{
+    padding: 20px;
+}
+.jConsider_title h4{
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.jposition{
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.active_product{
+    border: 2px solid rgb(44, 43, 43);
+}
+
+.jmensTree_holder{
+    background-color: #f5f5f5;
+    padding: 50px;
+    text-align: center;
+    margin: 30px 0;
+}
+.jmensTree_holder h1{
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.jmensTree{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+.jmensTree p{
+    font-size: 50px;
+    font-weight: bold;
+}
+.jmensTree img{
+    height: 30px;
+}
+.jsize{
+    position: relative;
+    background-color: white;
+    height: 150px;
+    width: 450px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 30px;
+}
+.jline{
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+}
+.jline1{
+    height: 20px;
+    background-color: #ddd;
+    width: 4px;
+}
+.jline2{
+    height: 20px;
+    background-color: #ddd;
+    width: 4px;
+}
+.jline3{
+    position: absolute;
+    height: 20px;
+    background-color: #ddd;
+    width: 4px;
+}
+.jline4{
+    position: absolute;
+    height: 15px;
+    background-color: black;
+    width: 15px;
+    border-radius: 50%;
+}
+.jsize_text{
+    position: absolute;
+    top: 15%;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+.jruns{
+    position: absolute;
+    left: 30px;
+    top: 60%;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.jTrue{
+    position: absolute;
+    top: 60%;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.jLarge{
+    position: absolute;
+    top: 60%;
+    right: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.jp{
+    width: 580px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+.r-email-signup p {
+    letter-spacing: 1px;
+}
+.r-email-signup form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.r-email-signup input[type="email"] {
+    padding: 13px;
+    font-size: 1rem;
+    border: 3px solid #ccc;
+    /* border-radius: 5px 0 0 5px; */
+    outline: none;
+    width: 20vw;
+    border-bottom-color: 2px solid black;
+    border-bottom-color: white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    font-weight: bold;
+    background-color: #4d5559;
+}
+.r-email-signup button {
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    background-color: #4d5559;
+    color: #fff;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.r-email-signup button:hover{
+    background: white;
+    color: #000;
+    border: 2px solid black;
+}

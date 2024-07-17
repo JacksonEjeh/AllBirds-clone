@@ -1,0 +1,1364 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.active{
+    text-decoration: underline;
+}
+.j_topbar{
+    background-color: #2F612E;
+    padding: 13px;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.j_arrow{
+    position: absolute;
+    right: 250px;
+    height: 10px; 
+    cursor: pointer;
+}
+.j_topbar_text{
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14.3px;
+    letter-spacing: 0.5px;
+}
+.j_topbar_text1{
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14.3px;
+    letter-spacing: 0.5px;
+    display: none;
+}
+
+/* navbar */
+
+.j_navbar{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 35px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+.j_navbar p{
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1.7px;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.j_navbar p a{
+    color: #212A2F;
+    text-decoration: none;
+}
+.j_navbar p:hover{
+    text-decoration: underline;
+}
+.j_topbar_text a{
+    color: white;
+}
+.j_navSvg{
+    display: flex;
+    gap: 20px;
+}
+.j_navSvg img{
+    cursor: pointer;
+    height: 23px;
+}
+.j_category{
+    display: flex;
+    gap: 30px;
+}
+.j_right_category{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.j_right_text{
+    display: flex;
+    gap: 30px;
+}
+.j_cart_logo{
+    position: relative;
+    cursor: pointer;
+}
+.j_count{
+    position: absolute;
+    top: 0;
+    right: 5.5px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+/* Mens dropdown */
+
+.j_main_container{
+    position: relative;
+}
+.j_mens_overlay{
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    display: none;
+}
+.j_mens_dropdown{
+    background-color: white;
+    padding: 65px 130px;
+    padding-top: 100px;
+    /* height: 65vh; */
+}
+.j_new_summer{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_427/cms/1514OzcP5Wz9Gt1PO10rHG/ba92f86ea03eafbccb5b929028982657/24Q3_FallFlow1_Site_Nav_Tile_Mobile_1125x324.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+.j_lightweight{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_427/cms/1UfQv06V8odtR87s7W3OnJ/a35e36c770339c4d8a342782621b9c1a/24Q3_July_SeasonalCore_WorldOfBreeze_Site_Nav_Tile_Mobile_1125x324.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.j_mens_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.j_mens_content a{
+    color: black;
+    text-decoration: none;
+}
+.j_mens_content a:hover{
+    text-decoration: underline;
+}
+.j_mens_content h4{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.j_mens_content p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+
+/* women dropdown */
+
+.j_womens_overlay{
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.493);
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    display: none;
+}
+.j_womens_dropdown{
+    background-color: white;
+    padding: 65px 130px;
+    padding-top: 100px;
+    /* height: 65vh; */
+}
+.j_womens_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.j_womens_content a{
+    color: black;
+    text-decoration: none;
+}
+.j_womens_content a:hover{
+    text-decoration: underline;
+}
+.j_womens_content h4{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.j_womens_content p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+
+/* kids dropdown */
+.j_kids_overlay{
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.507);
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    display: none;
+}
+.j_kids_dropdown{
+    background-color: white;
+    padding: 65px 210px;
+    padding-top: 100px;
+    /* height: 65vh; */
+}
+.j_kids_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.j_kids_content a{
+    color: black;
+    text-decoration: none;
+}
+.j_kids_content a:hover{
+    text-decoration: underline;
+}
+.j_kids_content h4{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.j_kids_content p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.j_bigKids{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_480/cms/18jb8nIsWu9kCtFPXXfPwS/2a9f5b5c58f4d8007b9f41fb08bda84e/NavTile-Desktop-BK.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.j_littleKids{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_480/cms/1RhALplc1l6BsMibPxQIJF/4570175a55da596f3dabb33228d18c3c/NavTile-Desktop-LK.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+/* sustainability */
+
+.j_sustain_overlay{
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.438);
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    display: none;
+}
+.j_sustain_dropdown{
+    background-color: white;
+    padding: 65px 210px;
+    padding-top: 100px;
+    /* height: 65vh; */
+}
+.j_sustain_content{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+.j_sustain_content a{
+    color: black;
+    text-decoration: none;
+}
+.j_sustain_content a:hover{
+    text-decoration: underline;
+}
+.j_sustain_content h4{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.j_sustain_content p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.j_sustain2{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_480/cms/21GOBuZruqrlDRiGHTn8bP/52c68a685d36029222b61971962b4c7c/ReRun-Site-NavTiles-Web.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.j_sustain{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_480/cms/4uP5glPDTEuHdDHrd0kFFL/a68d3752d385c8523ad1a68d1a491a69/23Q2-Earth_Day-Site-Nav_Tile-1125x324.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+/* SALES */
+
+.j_sale_overlay{
+    position: absolute;
+    top: 57px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    z-index: 99;
+    position: fixed;
+    display: none;
+}
+.j_sale_dropdown{
+    background-color: white;
+    padding: 65px 160px;
+    padding-top: 100px;
+    /* height: 65vh; */
+}
+.j_sale_content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.j_sale_content a{
+    color: black;
+    text-decoration: none;
+}
+.j_sale_content a:hover{
+    text-decoration: underline;
+}
+.j_sale_content h4{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.j_sale_content p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.j_women_sale{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_427/cms/79YdU1mw1kQVlkdnL7RyfC/d7134e63e05a3b74f8d22a590940c4d1/Nav-Tile-W_Desktop_1125__324.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.j_men_sale{
+    background-image: url(https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_427/cms/1VdDqgMc3u35pnYngXErMM/cddb56cf0cb3a3a0b474257651aa4563/Nav-Tile-M_Desktop_1125__324.jpg);
+    height: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+/* CART */
+
+.j_cart_overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    z-index: 9999;
+    position: fixed;
+    display: none;
+}
+.j_cart_popup{
+    position: fixed;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    width: 490px;
+    height: 100%;
+    margin-right: -100vw;
+    transition: .5s all ease;
+}
+.slidein{
+    margin: 0;
+}
+.j_cart_body{
+    position: relative;
+}
+.j_cart_empty{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    text-align: center;
+    padding: 25px 95px;
+    display: none;
+}
+.j_cart_down{
+    background-color: white;
+    height: 45vh;
+    overflow-y: auto;
+}
+.j_cart_top{
+    background-color: white;
+    height: 45vh;
+    overflow-y: auto;
+}
+.j_cart_nav{
+    position: relative;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.j_close{
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    transition: transform 1s all ease;
+}
+.j_close:hover{
+    transform: rotate(360deg) translateZ(0);
+}
+.j_cart_text p{
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: .5px;
+    font-family: sans-serif;
+}
+.j_cart_bar{
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+}
+.j_cart_label{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+
+}
+.j_btn{
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 13px;
+    margin-bottom: 10px;
+}
+.j_btn:hover{
+    background-color: black;
+    color: white;
+}
+.j_btn p{
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+.j_cart_item{
+    border-bottom: .5px solid #ddd;
+    padding: 25px 10px;
+    display: flex;
+    gap: 15px;
+}
+.j_cart_img{
+    background-color: #F5F5F5;
+    width: 90px;
+    height: 90px;
+}
+.j_cart_quantity{
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    width: 80px;
+    border: .5px solid #ddd;
+    align-items: center;
+    margin-top: 15px;
+}
+.j_cart_quantity button{
+    cursor: pointer;
+   border: none;
+   background-color: transparent;
+
+}
+.j_quantity_count{
+    font-size: 12px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.j_cart_title h4{
+    margin-bottom: 5px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+.des{
+    font-size: 11px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+.j_cart_title{
+    width: 80%;
+}
+.j_cart_price{
+    font-size: 15px;
+}
+
+
+.j_cart_gifting{
+    border-bottom: .5px solid #ddd;
+    border-top: .5px solid #ddd;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.j_cart_gifting p{
+    font-size: 13px;
+    letter-spacing: .5px;
+    font-family: sans-serif;
+}
+.j_cart_gifting p a{
+    color: black;
+}
+.j_cart_total{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.j_cart_total div{
+    display: flex;
+    justify-content: space-between;
+}
+.j_cart_total div p{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.j_cart_pay{
+    cursor: pointer;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    border: 2px solid black;
+    transition: .5s all ease;
+    margin: 10px 0;
+}
+.j_cart_pay:hover{
+    background-color: white;
+    color: black;
+}
+.j_cart_pay_link{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+.shopPay{
+    background-color: blue;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.amazon{
+    background-color: rgb(233, 233, 6);
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.paypal{
+    cursor: pointer;
+    background-color: rgb(197, 197, 5);
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 3px;
+}
+.j_mightLike{
+    padding: 15px 0;
+}
+.j_mightLike p{
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.j_radio{
+    background-color: #ddd;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.j_radio1{
+    background-color: #ddd;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.active_radio{
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+}
+.j_radio_holder{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.j_cart_card{
+    display: flex;
+    gap: 15px;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-bottom: .5px solid #ddd;
+}
+.j_cart_title2{
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+}
+.j_select{
+    margin-bottom: 50px;
+    background-color: #F5F5F5;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.j_select {
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 13px;
+}
+
+
+.jShopContainer{
+    display: flex;
+    padding: 20px;
+    padding-top: 60px;
+    gap: 20px;
+    
+}
+.jLeftBar{
+    width: 25%;
+}
+.jRightBar{
+    width: 75%;
+}
+.jleftMenShoe{
+    margin-bottom: 20px;
+}
+.jhome{
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: .5px;
+    margin-bottom: 6px;
+}
+.jhome a{
+    color: black;
+    text-decoration: none;
+}
+.jhome a:hover{
+    text-decoration: underline;
+}
+
+.jSidebarP a{
+    color: black;
+    text-decoration: none;
+}
+.jSidebarP a:hover{
+    text-decoration: underline;
+}
+.jleftMenShoe h3{
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+.jSidebarP{
+    font-size: 14px;
+    margin-bottom: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.jFilter{
+    padding: 15px 0px;
+    border-bottom: .5px solid grey;
+}
+.jFilter p{
+    font-size: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.jSize{
+    padding: 15px 0px;
+}
+.jSize p{
+    font-size: 15px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.jSizeText p{
+    font-size: 13px;
+    margin-bottom: 10px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.jSizeBoxHolder{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 20px 0;
+    border-bottom: .5px solid grey;
+}
+.jSizeBox{
+    border: .5px solid black;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.jSizeBox:hover{
+    background-color: #ddd;
+}
+.jCheckbox{
+    border: .5px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jBest{
+    cursor: pointer;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.jBest p{
+    font-size: 13px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.jCheck1{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck1{
+    display: block;
+}
+.jBestFor{
+    padding-bottom: 5px;
+    border-bottom: .5px solid grey;
+}
+.jCheck2{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck2{
+    display: block;
+}
+.jCheck3{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck3{
+    display: block;
+}
+.jCheck4{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck4{
+    display: block;
+}
+.jCheck5{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck5{
+    display: block;
+}
+.jCheck6{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck6{
+    display: block;
+}
+.jCheck7{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck7{
+    display: block;
+}
+.jCheck8{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck8{
+    display: block;
+}
+.jCheck9{
+    background-color: #ddd;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    display: none;
+}
+.jBest:hover .jCheck9{
+    display: block;
+}
+
+.jHue p{
+    font-size: 13px;
+    letter-spacing: .4px;
+    font-family: sans-serif;
+}
+.jHue{
+    cursor: pointer;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.jCirle{
+    border: .5px solid #ddd;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+.red{
+    background-color: red;
+}
+.pink{
+    background-color: pink;
+}
+.brown{
+    background-color: brown;
+}
+.purple{
+    background-color: purple;
+}
+.blue{
+    background-color: blue;
+}
+.green{
+    background-color: green;
+}
+.beige{
+    background-color: beige;
+}
+.white{
+    background-color: white;
+}
+.grey{
+    background-color: grey;
+}
+.jCheck_active{
+    background-color: black;
+    display: block;
+}
+.jbold_active{
+    font-weight: bold;
+}
+
+
+.jRightTop{
+    display: flex;
+    justify-content: end;
+    padding: 0 20px;
+}
+.jcategory{
+    padding: 2px;
+    display: flex;
+    width: 150px;
+    border: .5px solid grey;
+    gap: 20px;
+    border-radius: 20px;
+    align-items: center;
+}
+.jcategory div{
+    cursor: pointer;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+}
+.jdark{
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+}
+.jShopItemsHolder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.jShopItems{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.jShopItems:hover .jsizes{
+    position: absolute;
+    bottom: -140px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    display: block;
+}
+.jShopItems:hover{
+    box-shadow: 2px -2px 10px rgba(0, 0, 0, 0.6);
+}
+.jShopItemImg{
+    position: relative;
+    background-color: #F5F5F5;
+}
+.jShopItemTitle{
+    margin: 10px 0;
+}
+.jShopItemTitle h4{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.jItemPreview{
+    display: flex;
+    gap: 5px;
+}
+.jPreview{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 43px;
+    width: 43px;
+    background-color: #F5F5F5;
+}
+.jPreview:hover{
+    border: 1px solid grey;
+}
+.jPreview1{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 43px;
+    width: 43px;
+    background-color: #F5F5F5;
+    border: 1px solid rgb(128, 128, 128);
+}
+.jPreview1:hover{
+    border: 1px solid black;
+}
+.jSizeBox1{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jsizes{
+    background-color: white;
+    display: none;
+}
+.jSizeBox1:hover{
+    background-color: #ddd;
+}
+.jSizeBoxHolder1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.jquick{
+    font-size: 14px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}
+.j_2Img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.j_3Img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.j_4Img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.j_5Img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+.active2{
+    border: 1px solid grey;
+}
+.jShopItemsAd{
+    position: relative;
+    padding: 20px;
+}
+.j_ad_text{
+    position: absolute;
+    top: 240px;
+    left: 25px;
+    right: 25px;
+    bottom: 20px;
+    text-align: center;
+}
+.j_ad_text2{
+    position: absolute;
+    top: 260px;
+    left: 30px;
+    right: 30px;
+    bottom: 20px;
+    text-align: center;
+}
+.j_ad_text2 h3{
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    margin-bottom: 5px;
+}
+.j_ad_text2 p{
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.j_ad_text2 button{
+    width: 95%;
+    padding: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: .5s all ease;
+}
+.j_ad_text2 button:hover{
+    background-color: rgb(30, 29, 29);
+    color: white;
+}
+.j_ad_text h3{
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    margin-bottom: 5px;
+}
+.j_ad_text p{
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.j_ad_text button{
+    width: 95%;
+    padding: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: .5s all ease;
+}
+.j_ad_text button:hover{
+    background-color: rgb(30, 29, 29);
+    color: white;
+}
+
+
+.jExploreContainer{
+    background-color: #F5F5F5;
+    margin: 60px 0;
+    display: flex;
+}
+.jExploreLeft{
+    padding: 80px 20px;
+    width: 25%;
+}
+.jExploreLeft h1{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+.jExploreRight{
+    width: 75%;
+    display: grid;grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 30px 20px;
+}
+.jExploreContent{
+    background-color: white;
+}
+.jExploreContent h3{
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+.jAllBirdHolder{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 89%;
+    margin: 10px auto;
+    padding: 20px;
+}
+.jAllBird{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.jUp_down{
+    position: relative;
+}
+.opacity{
+    opacity: 0;
+}
+.jdownArrow{
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.jAllBirdHide p{
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 14px;
+    line-height: 20px;
+}
+.jAllBirdHide p a{
+    color: black;
+}
+.jAllBirdHide{
+    /* padding: 10px 0; */
+    display: none;
+}
+.jAllBirdHolder h3{
+    letter-spacing: 1px;
+}
+.jAllBirdHolder1 h3{
+    letter-spacing: 1px;
+}
+
+
+.jAllBirdHolder1{
+    width: 89%;
+    margin: 10px auto;
+    padding: 0 20px;
+    margin-bottom: 150px;
+}
+.jAllBird1{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.jUp_down1{
+    position: relative;
+}
+.opacity1{
+    opacity: 0;
+}
+.jdownArrow1{
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.jAllBirdHide1 p{
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.jAllBirdHide1 p a{
+    color: black;
+}
+.jAllBirdHide1{
+    /* padding: 10px 0; */
+    display: none;
+}
+
+
+
+.jApproachHolder{
+    padding: 25px;
+    margin-bottom: 30px;
+}
+.jApproach{
+    margin-bottom: 20px;
+}
+.j_allbird{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.j_allbird_wear h2{
+    margin-bottom: 10px;
+    letter-spacing: .5px;
+}
+.j_allbird_wear p{
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.j_allbird_wear a{
+    color: black;
+}

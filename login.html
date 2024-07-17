@@ -7,9 +7,436 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/shop.css">
 </head>
 <body>
+    <div class="j_topbar">
+        <div>
+            <p class="j_topbar_text">Summer Colors On Deck: Breezy Shoes In Fresh New Hues. <a href="#">Shop Men</a> | <a href="#">Shop Women</a></p>
+            <p class="j_topbar_text1">Free Shipping On Orders Over $75. Free returns.</p>
+        </div>
+        <img class="j_arrow" src="./images/icons/" alt="">
+    </div>
+    <nav class="j_navbar">
+        <div class="j_category">
+            <p id="mens">MEN</p>
+            <p id="womens">WOMEN</p>
+            <p id="kids">KIDS</p>
+            <p><a href="#">SOCKS</a></p>
+            <p id="sale"  style="color: rgb(192, 28, 28);">SALE</p>
+        </div>
+        <div style="margin-left: 150px;">
+            <a href="index.html">
+                <img src="./images/shop/logo_with_padding_(1).png" alt="" style="height: 34px;">
+            </a>
+        </div>
+        <div class="j_right_category">
+            <div class="j_right_text">
+                <p id="sustain">SUSTAINABILITY</p>
+                <p><a href="#">RETURN</a></p>
+                <p><a href="#">STORES</a></p>
+            </div>
+            <div class="j_navSvg">
+                <a href="#"><img src="./images/shop/search.svg" alt=""></a>
+                <a href="login.html"><img src="./images/shop/user.svg" alt=""></a>
+                <a href="#"><img src="./images/shop/question.svg" alt=""></a>
+                <div class="j_cart_logo">
+                    <img src="./images/shop/cart.svg" alt="">
+                    <div class="j_count">0</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="j_cart_overlay">
+        <div class="j_cart_popup">
+            <div class="j_cart_nav">
+                <img class="j_close" src="./images/icons/close (1).png" alt="" style="height: 25px;">
+                <div class="j_cart_logo">
+                    <img src="./images/shop/cart.svg" alt="" style="height: 25px;">
+                    <div class="j_count"><p>0</p></div>
+                </div>
+                <div class="j_cart_text">
+                    <p>You're <b>$75</b> away from free shipping!</p>
+                </div>
+            </div>
+            <div class="j_cart_bar"></div>
+            <div class="j_cart_body">
+                <div class="j_cart_empty">
+                    <div class="j_cart_label">
+                        <p>Your Cart is Empty</p>
+                    </div>
+                    <div class="j_btn">
+                        <p>SHOP MEN'S</p>
+                    </div>
+                    <div class="j_btn">
+                        <p>SHOP WOMEN'S</p>
+                    </div>
+                    <div class="j_btn">
+                        <p>SHOP SOCKS</p>
+                    </div>
+                    <div class="j_btn">
+                        <p>SHOP MEN'S SALE</p>
+                    </div>
+                    <div class="j_btn">
+                        <p>SHOP WOMEN'S SALE</p>
+                    </div>
+                </div>
+                <div class="j_cart_top">
+                    <div class="j_cart_item">
+                        <div class="j_cart_img">
+                            <img style="height: 100%; width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_107,f_auto,q_auto/https://cdn.shopify.com/s/files/1/1104/4168/files/TR3MJBW080_SHOE_ANGLE_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                        </div>
+                        <div class="j_cart_title">
+                            <div style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <h4>Men's Tree Runners</h4>
+                                    <p class="des">Jet Black (White Sole)</p>
+                                    <p class="des">Size: 12</p>
+                                </div>
+                                <div>
+                                    <img style="height: 10px; cursor: pointer;" src="./images/icons/close (1).png" alt="">
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="j_cart_quantity">
+                                    <button id="decreaseBtn">
+                                        <img src="./images/icons/remove.png" alt="" style="height: 10px;">
+                                    </button>
+                                    <p id="counter" class="j_quantity_count">1</p>
+                                    <button id="increaseBtn">
+                                        <img src="./images/icons/plus.png" alt="" style="height: 10px;">
+                                    </button>
+                                </div>
+                                <div class="j_cart_price">
+                                    <p>$95</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="j_cart_item">
+                        <div class="j_cart_img">
+                            <img style="height: 100%; width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_107,f_auto,q_auto/https://cdn.shopify.com/s/files/1/1104/4168/files/TR3MJBW080_SHOE_ANGLE_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                        </div>
+                        <div class="j_cart_title">
+                            <div style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <h4>Men's Tree Runners</h4>
+                                    <p class="des">Jet Black (White Sole)</p>
+                                    <p class="des">Size: 12</p>
+                                </div>
+                                <div>
+                                    <img style="height: 10px; cursor: pointer;" src="./images/icons/close (1).png" alt="">
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="j_cart_quantity">
+                                    <button id="decreaseBtn">
+                                        <img src="./images/icons/remove.png" alt="" style="height: 10px;">
+                                    </button>
+                                    <p id="counter" class="j_quantity_count">1</p>
+                                    <button id="increaseBtn">
+                                        <img src="./images/icons/plus.png" alt="" style="height: 10px;">
+                                    </button>
+                                </div>
+                                <div class="j_cart_price">
+                                    <p>$95</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="j_cart_item">
+                        <div class="j_cart_img">
+                            <img style="height: 100%; width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_107,f_auto,q_auto/https://cdn.shopify.com/s/files/1/1104/4168/files/TR3MJBW080_SHOE_ANGLE_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                        </div>
+                        <div class="j_cart_title">
+                            <div style="display: flex; justify-content: space-between;">
+                                <div>
+                                    <h4>Men's Tree Runners</h4>
+                                    <p class="des">Jet Black (White Sole)</p>
+                                    <p class="des">Size: 12</p>
+                                </div>
+                                <div>
+                                    <img style="height: 10px; cursor: pointer;" src="./images/icons/close (1).png" alt="">
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div class="j_cart_quantity">
+                                    <button id="decreaseBtn">
+                                        <img src="./images/icons/remove.png" alt="" style="height: 10px;">
+                                    </button>
+                                    <p id="counter" class="j_quantity_count">1</p>
+                                    <button id="increaseBtn">
+                                        <img src="./images/icons/plus.png" alt="" style="height: 10px;">
+                                    </button>
+                                </div>
+                                <div class="j_cart_price">
+                                    <p>$95</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="j_cart_down">
+                    <div class="j_cart_gifting">
+                        <img style="height: 20px;" src="./images/icons/gift.png" alt="">
+                        <p>Gifting? <a href="#">Add logo-free packaging and more.</a></p>
+                    </div>
+                    <div class="j_cart_total">
+                        <div>
+                            <p><b>Subtotal</b></p>
+                            <p>$235</p>
+                        </div>
+                        <div>
+                            <p><b>Shipping</b></p>
+                            <p>FREE</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="j_cart_pay">PROCEED TO CHECKOUT</div>
+                    </div>
+                    <div class="j_cart_pay_link">
+                        <div class="shopPay">
+                            <img style="height: 20px;" src="./images/icons/ShopPay_-_White.svg" alt="">
+                        </div>
+                        <div class="amazon">
+                            <img style="height: 20px;" src="/images/icons/PayPal_-_Color.svg" alt="">
+                        </div>
+                        <div class="paypal">
+                            <img style="height: 20px;" src="/images/icons/Amazon_Pay_-_Black.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="j_mightLike">
+                        <p>YOU MIGHT ALSO LIKE</p>
+                    </div>
+                    <div class="j_cart_card">
+                        <div class="j_cart_card_img">
+                            <img src="https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_70,b_rgb:f5f5f5/cms/4sPbkjGxwa7OBd6Q9YTg93/11084efecd6766090ed89e406fa0c1ab/SKU-SOCKS-GLOBAL-ANKLE-BLIZZARD-1_Resize_0000_SKU-SOCKS-GLOBAL-NOSHOW-NATURAL-BLACK-1-min.png" alt="">
+                        </div>
+                        <div style="width: 80%;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h5 class="j_cart_title2">Anytime No Show Sock</h5>
+                                <p class="des">$19</p>
+                            </div>
+                            <div class="j_radio_holder">
+                                <div class="j_radio">
+                                    <div class="active_radio"></div>
+                                </div>
+                                <div class="j_radio1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="j_select">
+                        <p>Select a Size</p>
+                        <img style="height: 10px;" src="./images/icons/close (2).png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="j_main_container">
+        <div class="j_mens_overlay">
+            <div class="j_mens_dropdown">
+                <div class="j_mens_content">
+                    <div>
+                        <h4><a href="#">SHOES</a></h4>
+                        <p><a href="#">Everyday Sneakers</a></p>
+                        <p><a href="#">Active Shoes</a></p>
+                        <p><a href="#">Water-Repellent Sneakers</a></p>
+                        <p><a href="#">Slip-Ons</a></p>
+                        <p><a href="#">Hiking</a></p>
+                        <p><a href="#">High Tops</a></p>
+                        <p><a href="#">Sale</a></p>
+                        <p><a href="shop.html">Shop all</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">BESTSELLERS</a></h4>
+                        <p><a href="#">Tree Runner</a></p>
+                        <p><a href="#">Canvas Piper</a></p>
+                        <p><a href="#">Tree Runner Go</a></p>
+                        <p><a href="#">Tree Dasher 2</a></p>
+                        <p><a href="#">Tree Lounger</a></p>
+                        <p><a href="#">Tree Dasher Relay</a></p>
+                        <p><a href="#">Shop all</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">APPAREL & MORE</a></h4>
+                        <p><a href="#">Socks</a></p>
+                        <p><a href="#">Underwear</a></p>
+                        <p><a href="#">Tees</a></p>
+                        <p><a href="#">Sweatshirts & Sweatpants</a></p>
+                        <p><a href="#">Hats</a></p>
+                        <p><a href="#">Insoles</a></p>
+                        <p><a href="#">Lace Kits</a></p>
+                        <p><a href="#">Gift Cards</a></p>
+                        <p><a href="#">Sale</a></p>
+                    </div>
+                    <div style="width:400px;">
+                        <h4>FEATURED</h4>
+                        <a style="color: white; font-size: 50px;" href="#">
+                            <div class="j_new_summer">
+                                <p style="font-size: 16px; letter-spacing: 1px;">NEW SUMMER COLORS</p>
+                            </div>
+                        </a>
+                        <a style="color: white;" href="#">
+                            <div class="j_lightweight">
+                                <P style="font-size: 16px;">LIGHTWEIGHT, BREEZY SHOES</P>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="j_womens_overlay">
+            <div class="j_womens_dropdown">
+                <div class="j_womens_content">
+                    <div>
+                        <h4><a href="#">FEMALE SHOES</a></h4>
+                        <p><a href="#">Everyday Sneakers</a></p>
+                        <p><a href="#">Flats</a></p>
+                        <p><a href="#">Active Shoes</a></p>
+                        <p><a href="#">Water-Repellent Sneakers</a></p>
+                        <p><a href="#">Slip-Ons</a></p>
+                        <p><a href="#">Hiking</a></p>
+                        <p><a href="#">High Tops</a></p>
+                        <p><a href="#">Sale</a></p>
+                        <p><a href="#">Shop all</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">BESTSELLERS</a></h4>
+                        <p><a href="#">Tree Runner</a></p>
+                        <p><a href="#">Tree Dasher 2</a></p>
+                        <p><a href="#">Canvas Piper</a></p>
+                        <p><a href="#">Tree Breezer</a></p>
+                        <p><a href="#">Tree Runner Go</a></p>
+                        <p><a href="#">Tree Lounger</a></p>
+                        <p><a href="#">Shop all</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">APPAREL & MORE</a></h4>
+                        <p><a href="#">Socks</a></p>
+                        <p><a href="#">Underwear</a></p>
+                        <p><a href="#">Tees</a></p>
+                        <p><a href="#">Hats</a></p>
+                        <p><a href="#">Insoles</a></p>
+                        <p><a href="#">Lace Kits</a></p>
+                        <p><a href="#">Gift Cards</a></p>
+                        <p><a href="#">Sale</a></p>
+                    </div>
+                    <div style="width:400px;">
+                        <h4>FEATURED</h4>
+                        <a style="color: white; font-size: 50px;" href="#">
+                            <div class="j_new_summer">
+                                <p style="font-size: 16px; letter-spacing: 1px;">NEW SUMMER COLORS</p>
+                            </div>
+                        </a>
+                        <a style="color: white;" href="#">
+                            <div class="j_lightweight">
+                                <P style="font-size: 16px;">LIGHTWEIGHT, BREEZY SHOES</P>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="j_kids_overlay">
+            <div class="j_kids_dropdown">
+                <div class="j_kids_content">
+                    <div>
+                        <h4><a href="#">LITTLE KIDS</a></h4>
+                        <p><a href="#">Everyday Sneakers</a></p>
+                        <p><a href="#">Slip-Ons</a></p>
+                        <p><a href="#">Sale</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">BIG KIDS</a></h4>
+                        <p><a href="#">Everyday Sneakers</a></p>
+                        <p><a href="#">Slip-Ons</a></p>
+                        <p><a href="#">Sale</a></p>
+                    </div>
+                    <div style="width:400px;">
+                        <h4>FEATURED</h4>
+                        <a style="color: white; font-size: 50px;" href="#">
+                            <div class="j_littleKids">
+                                <p style="font-size: 16px; letter-spacing: 1px;">LITTLE KIDS (5T-10T)</p>
+                            </div>
+                        </a>
+                        <a style="color: white;" href="#">
+                            <div class="j_bigKids">
+                                <P style="font-size: 16px;">BIG KIDS (11T-3Y)</P>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="j_sale_overlay">
+            <div class="j_sale_dropdown">
+                <div class="j_sale_content">
+                    <div>
+                        <h4><a href="#">MEN'S SALE</a></h4>
+                        <p><a href="#">Sale Shoes</a></p>
+                        <p><a href="#">Sale Apparel & Socks</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">WOMEN'S SALE</a></h4>
+                        <p><a href="#">Sale Shoes</a></p>
+                        <p><a href="#">Sale Apparel & Socks</a></p>
+                    </div>
+                    <div>
+                        <h4><a href="#">KID'S SALE</a></h4>
+                        <p><a href="#">Sale Little Kids</a></p>
+                        <p><a href="#">Sale Big Kids</a></p>
+                    </div>
+                    <div style="width:400px;">
+                        <h4>FEATURED</h4>
+                        <a style="color: white; font-size: 50px;" href="#">
+                            <div class="j_men_sale">
+                                <p style="font-size: 16px; letter-spacing: 1px;">MEN'S SALE</p>
+                            </div>
+                        </a>
+                        <a style="color: white;" href="#">
+                            <div class="j_women_sale">
+                                <P style="font-size: 16px;">WOMEN'S SALE</P>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="j_sustain_overlay">
+            <div class="j_sustain_dropdown">
+                <div class="j_sustain_content">
+                    <div>
+                        <h4><a href="#">INITIATIVES</a></h4>
+                        <p><a href="#">Our Sustainability Strategy</a></p>
+                        <p><a href="#">M0.0NSHOT</a></p>
+                        <p><a href="#">How We Operate</a></p>
+                        <p><a href="#">Carbon Footprint</a></p>
+                        <p><a href="#">Regenerativ Agriculture</a></p>
+                        <p><a href="#">Renewable Materials</a></p>
+                        <p><a href="#">Carbon Offsets</a></p>
+                        <p><a href="#">Responsible Energy</a></p>
+                    </div>
+                    <div style="width:450px;">
+                        <h4>FEATURED</h4>
+                        <a style="color: white; font-size: 50px;" href="#">
+                            <div class="j_sustain">
+                                <p style="font-size: 16px; letter-spacing: 1px;">OUR SUSTAINABILITY STRATEGY</p>
+                            </div>
+                        </a>
+                        <a style="color: white;" href="#">
+                            <div class="j_sustain2">
+                                <P style="font-size: 16px;">ALLBIRDS RERUM MARKETPLACE</P>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="container">
         <div class="login">
@@ -25,13 +452,13 @@
                 
                 <button type="submit">SIGN IN</button>
                 
-                <a href="#">Forgot Password</a>
+                <a class="login_a" href="#">Forgot Password</a>
             </form>
         </div>
         
         <div class="register">
             <h2>Create an Account</h2>
-            <p>We never save credit card information.<br>
+            <p class="allP">We never save credit card information.<br>
                Registering makes checkout fast and easy and saves your order information in your account.</p>
             <form id="regForm">
                 <label for="register-firstname">First Name</label>
@@ -62,7 +489,7 @@
                 
                 <button type="submit">REGISTER</button>
                 
-                <p>By creating an account, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                <p class="allP">By creating an account, you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
             </form>
         </div>
     </div>
@@ -71,18 +498,18 @@
         <div class="r-approach-container">
             <div class="r-approach-item">
                 <h3>Wear-All-Day Comfort</h3>
-                <p>Lightweight, bouncy, and wildly comfortable, Allbirds shoes make any outing feel effortless. Slip in, lace up, or slide them on and enjoy the comfy support.</p>
-                <a href="#">Learn More</a>
+                <p class="allP">Lightweight, bouncy, and wildly comfortable, Allbirds shoes make any outing feel effortless. Slip in, lace up, or slide them on and enjoy the comfy support.</p>
+                <a class="login_a" href="#">Learn More</a>
             </div>
             <div class="r-approach-item">
                 <h3>Sustainability In Every Step</h3>
-                <p>From materials to transport, we're working to reduce our carbon footprint to near zero. Holding ourselves accountable and striving for climate goals isn't a 30-year goal—it's now.</p>
-                <a href="#">Learn More</a>
+                <p class="allP">From materials to transport, we're working to reduce our carbon footprint to near zero. Holding ourselves accountable and striving for climate goals isn't a 30-year goal—it's now.</p>
+                <a class="login_a" href="#">Learn More</a>
             </div>
             <div class="r-approach-item">
                 <h3>Materials From The Earth</h3>
-                <p>We replace petroleum-based synthetics with natural alternatives wherever we can. Like using wool, tree fiber, and sugar cane. They're soft, breathable, and better for the planet—win, win, win.</p>
-                <a href="#">Learn More</a>
+                <p class="allP">We replace petroleum-based synthetics with natural alternatives wherever we can. Like using wool, tree fiber, and sugar cane. They're soft, breathable, and better for the planet—win, win, win.</p>
+                <a class="login_a" href="#">Learn More</a>
             </div>
         </div>
     </section>
@@ -90,7 +517,7 @@
     <footer>
         <div>
             <section class="r-email-signup">
-                <p>Enter your email to stay in touch!</p>
+                <p class="allP">Enter your email to stay in touch!</p>
                 <form>
                     <input type="email">
                     <button type="submit">Sign Up</button>
@@ -101,46 +528,46 @@
             <div class="footer-section">
                 <h3>HELP</h3>
                 <ul>
-                    <li><a href="#">Chat with us!</a></li>
-                    <li><a href="#">1-888-963-8944</a></li>
-                    <li><a href="#">1-814-251-9966 (Text)</a></li>
-                    <li><a href="#">help@allbirds.com</a></li>
-                    <li><a href="#">Returns/Exchanges</a></li>
-                    <li><a href="#">FAQ/Contact Us</a></li>
-                    <li><a href="#">Afterpay</a></li>
+                    <li><a class="login_a" href="#">Chat with us!</a></li>
+                    <li><a class="login_a" href="#">1-888-963-8944</a></li>
+                    <li><a class="login_a" href="#">1-814-251-9966 (Text)</a></li>
+                    <li><a class="login_a" href="#">help@allbirds.com</a></li>
+                    <li><a class="login_a" href="#">Returns/Exchanges</a></li>
+                    <li><a class="login_a" href="#">FAQ/Contact Us</a></li>
+                    <li><a class="login_a" href="#">Afterpay</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>SHOP</h3>
                 <ul>
-                    <li><a href="#">Men's Shoes</a></li>
-                    <li><a href="#">Women's Shoes</a></li>
-                    <li><a href="#">Men's Apparel</a></li>
-                    <li><a href="#">Women's Apparel</a></li>
-                    <li><a href="#">Socks</a></li>
-                    <li><a href="#">Shoe Finder</a></li>
-                    <li><a href="#">Gift Cards</a></li>
-                    <li><a href="#">Refer a Friend</a></li>
+                    <li><a class="login_a" href="#">Men's Shoes</a></li>
+                    <li><a class="login_a" href="#">Women's Shoes</a></li>
+                    <li><a class="login_a" href="#">Men's Apparel</a></li>
+                    <li><a class="login_a" href="#">Women's Apparel</a></li>
+                    <li><a class="login_a" href="#">Socks</a></li>
+                    <li><a class="login_a" href="#">Shoe Finder</a></li>
+                    <li><a class="login_a" href="#">Gift Cards</a></li>
+                    <li><a class="login_a" href="#">Refer a Friend</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>COMPANY</h3>
                 <ul>
-                    <li><a href="#">Our Stores</a></li>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Our Materials</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Investors</a></li>
-                    <li><a href="#">Shoe Care</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Affiliates</a></li>
-                    <li><a href="#">Bulk Orders</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Allbirds Responsible Disclosure Program</a></li>
-                    <li><a href="#">California Transparency Act</a></li>
-                    <li><a href="#">Community Offers</a></li>
-                    <li><a href="#">Our Blog - The Perch</a></li>
+                    <li><a class="login_a" href="#">Our Stores</a></li>
+                    <li><a class="login_a" href="#">Our Story</a></li>
+                    <li><a class="login_a" href="#">Our Materials</a></li>
+                    <li><a class="login_a" href="#">Sustainability</a></li>
+                    <li><a class="login_a" href="#">Investors</a></li>
+                    <li><a class="login_a" href="#">Shoe Care</a></li>
+                    <li><a class="login_a" href="#">Partnerships</a></li>
+                    <li><a class="login_a" href="#">Affiliates</a></li>
+                    <li><a class="login_a" href="#">Bulk Orders</a></li>
+                    <li><a class="login_a" href="#">Careers</a></li>
+                    <li><a class="login_a" href="#">Press</a></li>
+                    <li><a class="login_a" href="#">Allbirds Responsible Disclosure Program</a></li>
+                    <li><a class="login_a" href="#">California Transparency Act</a></li>
+                    <li><a class="login_a" href="#">Community Offers</a></li>
+                    <li><a class="login_a" href="#">Our Blog - The Perch</a></li>
                 </ul>
             </div>
         </div>
@@ -148,39 +575,41 @@
         <div class="footer-bottom">
             <div class="footer-follow">
                 <h3>FOLLOW THE FLOCK</h3>
-                <p>Exclusive offers, a heads up on new things, and sightings of Allbirds in the wild. Oh, we have cute sheep, too. #allbirds</p>
+                <p class="allP">Exclusive offers, a heads up on new things, and sightings of Allbirds in the wild. Oh, we have cute sheep, too. #allbirds</p>
                 <div class="social-icons">
-                    <a href="#"><img src="images/insta.svg" alt="Instagram"></a>
-                    <a href="#"><img src="images/Tiktok-50x50.png" alt="TikTok"></a>
-                    <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
-                    <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-                    <a href="#"><img src="images/Youtube-50x50.png" alt="YouTube"></a>
-                    <a href="#"><img src="images/Pinterest-50x50.png" alt="Pinterest"></a>
+                    <a class="login_a" href="#"><img src="images/insta.svg" alt="Instagram"></a>
+                    <a class="login_a" href="#"><img src="images/Tiktok-50x50.png" alt="TikTok"></a>
+                    <a class="login_a" href="#"><img src="images/twitter.svg" alt="Twitter"></a>
+                    <a class="login_a" href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                    <a class="login_a" href="#"><img src="images/Youtube-50x50.png" alt="YouTube"></a>
+                    <a class="login_a" href="#"><img src="images/Pinterest-50x50.png" alt="Pinterest"></a>
                 </div>
             </div>
             <div class="footer-certifications">
                 <img src="images/icon-b-corp.svg" alt="Certified B Corporation">
             </div>
             <div class="footer-language">
-                <a href="#"><img src="images/flag-us.svg" alt="USA"></a>
-                <a href="#"><img src="images/flag-ca.svg" alt="Canada"></a>
-                <a href="#"><img src="images/3rd flag.svg" alt="UK"></a>
-                <a href="#"><img src="images/4th flag.svg" alt="EU"></a>
-                <a href="#"><img src="images/5th flag.svg" alt="Japan"></a>
-                <a href="#"><img src="images/6th flag.svg" alt="Korea"></a>
-                <a href="#"><img src="images/7th flag.svg" alt="Australia"></a>
-                <a href="#"><img src="images/8th flag.svg" alt="Japan"></a>
-                <a href="#"><img src="images/last flag.svg" alt="South-Korea"></a>
+                <a class="login_a" href="#"><img src="images/flag-us.svg" alt="USA"></a>
+                <a class="login_a" href="#"><img src="images/flag-ca.svg" alt="Canada"></a>
+                <a class="login_a" href="#"><img src="images/3rd flag.svg" alt="UK"></a>
+                <a class="login_a" href="#"><img src="images/4th flag.svg" alt="EU"></a>
+                <a class="login_a" href="#"><img src="images/5th flag.svg" alt="Japan"></a>
+                <a class="login_a" href="#"><img src="images/6th flag.svg" alt="Korea"></a>
+                <a class="login_a" href="#"><img src="images/7th flag.svg" alt="Australia"></a>
+                <a class="login_a" href="#"><img src="images/8th flag.svg" alt="Japan"></a>
+                <a class="login_a" href="#"><img src="images/last flag.svg" alt="South-Korea"></a>
             </div>
         </div>
 
         <div class="footer-legal">
-            <p>© 2024 Allbirds, Inc. All Rights Reserved. <a href="#">Terms</a>, <a href="#">Privacy & Accessibility</a></p>
-            <p><a href="#">Do Not Sell My Personal Information</a></p>
+            <p class="allP">© 2024 Allbirds, Inc. All Rights Reserved. <a href="#">Terms</a>, <a href="#">Privacy & Accessibility</a></p>
+            <p class="allP"><a  class="login_a" href="#">Do Not Sell My Personal Information</a></p>
         </div>
     </footer>
 
 
     <script src="js/login.js"></script>
+    <script src="js/shop.js"></script>
+    
 </body>
 </html>
