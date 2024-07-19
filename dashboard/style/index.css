@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.major_container{
+    height: 100vh;
+    display: flex;
+}
+.leftPage{
+    padding: 10px 20px;
+    width: 20%;
+    position: relative;
+}
+.rightPage{
+    width: 80%;
+    background-color: aqua;
+}
+.navLogo{
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: baseline;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 80%;
+}
+.navLogo img{
+    height: 40px;
+}
+.navLogo h1{
+    color: rgba(0, 0, 0, 0.945);
+}
+.leftTop{
+    padding-top: 80px;
+}
+.leftTop p{
+    font-size: 12px;
+    font-weight: 900;
+    color: #ddd;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+.dashboard{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(173, 216, 230, 0.63);
+    padding: 10px;
+    border-radius: 10px;
+}
+.dashboard img{
+    height: 20px;
+}
+.dashboard h3{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.leftDown p{
+    font-size: 12px;
+    font-weight: 900;
+    color: #ddd;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+.eCommerce{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.eCommerce:hover{
+    background-color: rgba(0, 128, 0, 0.1);
+
+}
+.elog{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.elog h3{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.elog img{
+    height: 24px;
+}
+.arrowDown{
+    height: 10px;
+}
+.category{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(173, 216, 230, 0.63);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.orders{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(173, 216, 230, 0.63);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.eCommerce_dropdown{
+    background-color: white;
+    padding-left: 40px;
+    display: none;
+}
+.eCommerce_dropdown li{
+    cursor: pointer;
+    padding: 10px 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.eCommerce_dropdown li:hover{
+    color: green;
+}
