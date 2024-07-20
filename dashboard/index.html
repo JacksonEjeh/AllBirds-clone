@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
     <title>Document</title>
@@ -13,11 +16,11 @@
         <div class="leftPage">
             <div class="navLogo">
                 <img src="../images/shop/logo-a.svg" alt="">
-                <h1>hopPoint</h1>
+                <h2>hopPoint</h2>
             </div>
             <div class="leftTop">
                 <p><b>MAIN HOME</b></p>
-                <div class="dashboard">
+                <div class="dashboard active">
                     <img src="../images/icons/menu.png" alt="">
                     <h3>Dashboard</h3>
                 </div>
@@ -33,27 +36,325 @@
                         <img class="arrowDown" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
                     </div>
                     <ul class="eCommerce_dropdown">
-                        <li>Add Product</li>
+                        <li id="addProduct">Add Product</li>
                         <li>Product List</li>
                     </ul>
                 </div>
-                <div class="category">
-                    <div class="elog">
-                        <img src="../images/icons/tool.png" alt="">
-                        <h3>Category</h3>
+                <div>
+                    <div class="category">
+                        <div class="elog">
+                            <img src="../images/icons/tool.png" alt="">
+                            <h3>Category</h3>
+                        </div>
+                        <img class="arrowDown" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
                     </div>
-                    <img class="arrowDown" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                    <ul class="category_dropdown">
+                        <li>Category List</li>
+                        <li>New Category</li>
+                    </ul>
                 </div>
-                <div class="orders">
-                    <div class="elog">
-                        <img src="../images/icons/shopping-bag.png" alt="">
-                        <h3>Order</h3>
+                <div>
+                    <div class="orders">
+                        <div class="elog">
+                            <img src="../images/icons/shopping-bag.png" alt="">
+                            <h3>Order</h3>
+                        </div>
+                        <img class="arrowDown" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
                     </div>
-                    <img class="arrowDown" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                    <ul class="orders_dropdown">
+                        <li>Category List</li>
+                        <li>New Category</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="user">
+                        <div class="elog">
+                            <img src="../images/shop/user.svg" alt="">
+                            <h3>User</h3>
+                        </div>
+                        <img class="arrowDown" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                    </div>
+                    <ul class="user_dropdown">
+                        <li>Add New User</li>
+                        <li>All User</li>
+                        <li>Login</li>
+                        <li>Sign Up</li>
+                    </ul>
+                </div>
+                <div class="setting">
+                    <img src="../images/icons/setting.png" alt="">
+                    <h3>Setting</h3>
+                </div>
+                <div class="help">
+                    <img src="../images/shop/question.svg" alt="">
+                    <h3>Help Center</h3>
+                </div>
+                <div class="connect">
+                    <p><b>CONNECT US</b></p>
+                    <div class="connect_flex">
+                        <div class="facbook">
+                            <img src="../images/icons/facebook.png" alt="">
+                        </div>
+                        <div class="twitter">
+                            <img src="../images/icons/twitter.png" alt="">
+                        </div>
+                        <div class="link">
+                            <img src="../images/icons/linkedin.png" alt="">
+                        </div>
+                        <div class="insta">
+                            <img src="../images/icons/instagram (4).png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="rightPage"></div>
+        <div class="rightPage">
+            <div class="rightNav">
+                <div class="search">
+                    <input type="text" placeholder="Search here...">
+                    <img src="../images/shop/search.svg" alt="">
+                </div>
+                <div class="navbtn">
+                    <div class="darkMode">
+                        <img src="../images/icons/moon.png" alt="">
+                    </div>
+                    <div class="notify">
+                        <img src="../images/icons/bell.png" alt="">
+                    </div>
+                    <div class="mssg">
+                        <img src="../images/icons/speech.png" alt="">
+                    </div>
+                    <div class="dash">
+                        <img src="../images/icons/menu.png" alt="">
+                    </div>
+                    <div class="dash">
+                        <img src="../images/icons/full-screen.png" alt="">
+                    </div>
+                </div>
+                <div class="profile_and_setting_container">
+                    <div class="profile">
+                        <div class="profile_holder" >
+                            <div class="profilePic"></div>
+                            <div class="profile_name">
+                                <h4>Jackson Gabriel</h4>
+                                <p>Admin</p>
+                            </div>
+                        </div>
+                        <ul class="profile_dropdown">
+                            <li>My Account</li>
+                            <li>Inbox</li>
+                            <li>Taskboard</li>
+                            <li>Support</li>
+                            <li>Log out</li>
+                        </ul>
+                    </div>
+                    <div class="setting2">
+                        <img src="../images/icons/setting.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="topHeader">
+                    <h1>Attribute</h1>
+                </div>
+                <div class="dashboard_container">
+                    <div class="container">
+                        <div class="leftCard">
+                            <div class="card_container">
+                                <div class="card_flex">
+                                    <div class="hexa">
+                                        <img src="../images/icons/buy (1).png" alt="">
+                                    </div>
+                                    <div class="hexa_text">
+                                        <p>Total Sale</p>
+                                        <h2>34,943</h2>
+                                    </div>
+                                </div>
+                                <div class="trend">
+                                    <img src="../images/icons/trend.png" alt="">
+                                    <p>1.56%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leftCard">
+                            <div class="card_container">
+                                <div class="card_flex">
+                                    <div class="hexa1">
+                                        <img src="../images/icons/dollar-symbol.png" alt="">
+                                    </div>
+                                    <div class="hexa_text">
+                                        <p>Total Income</p>
+                                        <h2>34,943</h2>
+                                    </div>
+                                </div>
+                                <div class="trend">
+                                    <img src="../images/icons/trend (1).png" alt="">
+                                    <p>1.56%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leftCard">
+                            <div class="card_container">
+                                <div class="card_flex">
+                                    <div class="hexa2">
+                                        <img src="../images/icons/blank-page.png" alt="">
+                                    </div>
+                                    <div class="hexa_text">
+                                        <p>Orders Paid</p>
+                                        <h2>34,943</h2>
+                                    </div>
+                                </div>
+                                <div class="trend">
+                                    <img src="../images/icons/trend (2).png" alt="">
+                                    <p>0.00%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="leftCard">
+                            <div class="card_container">
+                                <div class="card_flex">
+                                    <div class="hexa3">
+                                        <img src="../images/icons/users.png" alt="">
+                                    </div>
+                                    <div class="hexa_text">
+                                        <p>Total Visitor</p>
+                                        <h2>34,943</h2>
+                                    </div>
+                                </div>
+                                <div class="trend">
+                                    <img src="../images/icons/trend.png" alt="">
+                                    <p>1.56%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_overview_contauiner">
+                        <div class="product_overview_title">
+                            <h3>Product overview</h2>
+                            <div class="viewAll">
+                                <p>View all</p>
+                                <img src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                            </div>
+                        </div>
+                        <div class="product_header">
+                            <h4>Name</h4>
+                            <div class="product_subheader">
+                                <h4>Product ID</h4>
+                                <h4>Price</h4>
+                                <h4>Quantity</h4>
+                            </div>
+                        </div>
+                        <div class="product_holder">
+                            <div class="product_container">
+                                <div class="product">
+                                    <img src="../images/shop/1_12.jpeg" alt="">
+                                    <p><a href="#">Men's Tree Loungers</a></p>
+                                </div>
+                                <div class="product_detail">
+                                    <p>#70668</p>
+                                    <p>$450</p>
+                                    <p>200</p>
+                                </div>
+                            </div>
+                            <div class="product_container1">
+                                <div class="product">
+                                    <img src="../images/shop/1_20.jpeg" alt="">
+                                    <p><a href="#">Men's Tree Skippers</a></p>
+                                </div>
+                                <div class="product_detail">
+                                    <p>#22739</p>
+                                    <p>$320</p>
+                                    <p>300</p>
+                                </div>
+                            </div>
+                            <div class="product_container1">
+                                <div class="product">
+                                    <img src="../images/shop/1_19.png" alt="">
+                                    <p><a href="#">Men's SuperLight Wool Runners</a></p>
+                                </div>
+                                <div class="product_detail">
+                                    <p>#22739</p>
+                                    <p>$320</p>
+                                    <p>300</p>
+                                </div>
+                            </div>
+                            <div class="product_container1">
+                                <div class="product">
+                                    <img src="../images/shop/1_15.png" alt="">
+                                    <p><a href="#">Men's Trail Runners SWT</a></p>
+                                </div>
+                                <div class="product_detail">
+                                    <p>#22739</p>
+                                    <p>$320</p>
+                                    <p>300</p>
+                                </div>
+                            </div>
+                            <div class="product_container1">
+                                <div class="product">
+                                    <img src="../images/shop/1_9.png" alt="">
+                                    <p><a href="#">Men's SuperLight Tree Runners</a></p>
+                                </div>
+                                <div class="product_detail">
+                                    <p>#22739</p>
+                                    <p>$320</p>
+                                    <p>300</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="addProduct_page">
+                    <div class="addProduct_container">
+                        <div class="leftAddProduct">
+                            <div class="product_name">
+                                <p class="product_name_label"><b>Product name <span style="font-weight: bold; color: red;">*</span></b></p>
+                                <input type="text" placeholder="Enter product name">
+                                <p class="warn">Do not exceed 20 characters when entering the product name.</p>
+                            </div>
+                            <div class="product_category_container">
+                                <div class="product_category">
+                                    <p class="product_name_label">Category <span style="font-weight: bold; color: red;">*</span></p>
+                                    <select name="" id="">
+                                        <option value="">Choose category</option>
+                                        <option value="">Product</option>
+                                        <option value="">Shop</option>
+                                    </select>
+                                </div>
+                                <div class="product_brand">
+                                    <p class="product_name_label">Brand <span style="font-weight: bold; color: red;">*</span></p>
+                                    <select name="" id="">
+                                        <option value="">Choose brand</option>
+                                        <option value="">Product</option>
+                                        <option value="">Shop</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="product_price">
+                                <p class="product_name_label">Price <span style="font-weight: bold; color: red;">*</span></p>
+                                <input type="text" placeholder="Enter amount">
+                            </div>
+                            <div class="product_description">
+                                <p class="product_name_label">Description <span style="font-weight: bold; color: red;">*</span></p>
+                                <textarea id="" placeholder="Description"></textarea>
+                                <p class="warn">Do not exceed 100 characters when entering the product name.</p>
+                            </div>
+                        </div>
+                        <div class="rightAddProduct">
+                            <div class="product_images">
+                                <p class="product_name_label">Upload images</p>
+                                <div class="image_input">
+                                    <input type="file">
+                                    <input type="file">
+                                    <input type="file">
+                                </div>
+                                <p class="warn1">You need to add at least 4 images. Pay attention to the quality of the pictures you add, comply with the background color standards. Pictures must be in certain dimensions. Notice that the product shows all the details</p>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/index.js"></script>
 </body>
