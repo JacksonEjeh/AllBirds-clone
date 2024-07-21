@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/reg.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="loginPage_holder">
@@ -15,58 +17,64 @@
             <div class="fullName_container">
                 <div class="lastName">
                     <p class="product_name_label">Last name <span style="font-weight: bold; color: red;">*</span></p>
-                    <input type="text" placeholder="Enter last name">
+                    <input id="last_name" type="text" placeholder="Enter last name">
+                    <p id="lastNameError" class="error_messege">Field cannot be empty</p>
                 </div>
                 <div class="firstName">
                     <p class="product_name_label">First name <span style="font-weight: bold; color: red;">*</span></p>
-                    <input type="text" placeholder="Enter first name">
+                    <input id="first_name" type="text" placeholder="Enter first name">
+                    <p id="firstNameError" class="error_messege">Field cannot be empty</p>   
                 </div>
             </div>
             <div class="email_container">
                 <p class="product_name_label">Email address <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="email" placeholder="Enter your email address">
-                <p class="error_messege">Email field cannot be empty</p>
+                <input id="email" type="email" placeholder="Enter your email address">
+                <p id="emailError" class="error_messege">Field cannot be empty</p>
             </div>
             <div class="phone_container">
                 <p class="product_name_label">Phone <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="email" placeholder="Enter your phone number">
-                <p class="error_messege">Email field cannot be empty</p>
+                <input id="phone" type="text" placeholder="Enter your phone number">
+                <p id="phoneError" class="error_messege">Field cannot be empty</p>
             </div>
             <div class="phone_container">
                 <p class="product_name_label">Other phone <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="email" placeholder="Enter other phone numbers">
-                <p class="error_messege">Email field cannot be empty</p>
+                <input id="phones" type="text" placeholder="Enter other phone numbers">
+                <p id="phoneError2" class="error_messege">Field cannot be empty</p>
             </div>
             <div class="store_container">
                 <p class="product_name_label">Store name <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="email" placeholder="Enter your store name">
-                <p class="error_messege">Email field cannot be empty</p>
+                <input id="store_name" type="text" placeholder="Enter your store name">
+                <p id="storeNameError" class="error_messege">Field cannot be empty</p>
             </div>
             <div class="description_container">
                 <p class="product_name_label">Description <span style="font-weight: bold; color: red;">*</span></p>
-                <textarea id="" placeholder="Description"></textarea>
-                <p class="error_messege">Email field cannot be empty</p>
+                <textarea id="descp" placeholder="Description"></textarea>
+                <p id="despError" class="error_messege">Field cannot be empty</p>
             </div>
             <div class="icons_container">
                 <div class="icon">
                     <p class="product_name_label">Icon <span style="font-weight: bold; color: red;">*</span></p>
-                    <input type="file">
+                    <input id="icon" type="file">
+                    <p id="iconError" class="error_messege">Field cannot be empty</p>
                 </div>
                 <div class="banner">
                     <p class="product_name_label">Banner <span style="font-weight: bold; color: red;">*</span></p>
-                    <input type="file">
+                    <input id="banner" type="file">
+                    <p id="bannerError" class="error_messege">Field cannot be empty</p>
+                    
                 </div>
             </div>
             <div class="password_container">
                 <p class="product_name_label">Password <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="password" placeholder="Enter your password">
-                <p class="error_messege">Password field cannot be empty</p>
+                <input id="password" type="password" placeholder="Enter your password">
+                <p id="passwordError" class="error_messege">Password field cannot be empty</p>
+                <p id="passwordError2" class="error_messege">Password cannot be less than 8</p>
             </div>
             <div class="password_container">
                 <p class="product_name_label">Re-type password <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="password" placeholder="Re-tyype password">
-                <p class="error_messege">Password field cannot be empty</p>
-                <p class="error_messege">Password mismatch</p>
+                <input id="retypePassword" type="password" placeholder="Re-tyype password">
+                <p id="passwordError3" class="error_messege">Password field cannot be empty</p>
+                <p id="passwordError4" class="error_messege">Password mismatch</p>
             </div>
             <div class="forget_container">
                 <div class="keep">
