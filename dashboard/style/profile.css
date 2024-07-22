@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.profile_container{
+    height: 100vh;
+    display: flex;
+}
+.leftProfilePage{
+    background-color: aqua;
+    width: 25%;
+    border-right: 1px solid black;
+}
+.rightProfilePage{
+    background-color: blue;
+    width: 75%;
+}
+.banner{
+    background-color: pink;
+    
+}
