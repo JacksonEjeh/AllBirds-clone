@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/login.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="loginPage_holder">
@@ -14,13 +16,13 @@
         <form id="login">
             <div class="email_container">
                 <p class="product_name_label">Email address <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="email" placeholder="Enter your email address">
-                <p class="error_messege">Email field cannot be empty</p>
+                <input id="email" type="email" placeholder="Enter your email address">
+                <p id="emailError_for_login" class="error_messege">Email field cannot be empty</p>
             </div>
             <div class="password_container">
                 <p class="product_name_label">Password <span style="font-weight: bold; color: red;">*</span></p>
-                <input type="password" placeholder="Enter your password">
-                <p class="error_messege">Password field cannot be empty</p>
+                <input id="password" type="password" placeholder="Enter your password">
+                <p id="passwordError_for_login" class="error_messege">Password field cannot be empty</p>
             </div>
             <div class="forget_container">
                 <div class="keep">
@@ -32,7 +34,7 @@
                 </div>
             </div>
             <div class="loginBtn">
-                <p>Email or password is incorrect</p>
+                <p id="incorrectDetail">Invalid email or password</p>
                 <button>Login</button>
             </div>
             <div class="social">
@@ -49,7 +51,7 @@
                 </button>
             </div>
             <div class="reg">
-                <p>You don't have an account yet?<a href="#">Register Now</a></p>
+                <p>You don't have an account yet?<a href="reg.html">Register Now</a></p>
             </div>
         </form>
     </div>

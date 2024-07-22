@@ -10,9 +10,6 @@ body{
     padding: 20px;
     padding-top: 50px;
     background-color: white;
-    height: 550px;
-    overflow-y: auto;
-    scrollbar-color: white white;
     width: 60%;
     border-radius: 20px;
     margin: 20px auto;

@@ -77,14 +77,21 @@ $(document).ready(function(){
         } else{
             valid
             $('#passwordError4').hide()
-            alert('registration done')
 
             $.ajax({
                 url: `${endPoint}/merchants`,
                 method: 'POST',
                 data: marchantDetails,
                 success: function(res){
-                    console.log(res);
+                    if (res.code === 304) {
+                        $('#emailExist').show()
+                    } else{
+                        alert(`Registration Successful!! Click on the "GET STARTED" button to log-in`)
+                        window.location.href = "login.html"
+                    }
+                },
+                error: function(err){
+                    console.log(err);
                 }
             })
         }
