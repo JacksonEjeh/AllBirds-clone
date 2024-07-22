@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    const endPoint = "http://ecommerce.reworkstaging.name.ng/v2"
     $('#regForm').on('submit', function(event){
         event.preventDefault();
     
@@ -8,6 +9,8 @@ $(document).ready(function(){
         $('#lastnameError').hide();
         $('#register-email').removeClass('error');
         $('#emailError').hide();
+        $('#register-phone').removeClass('error');
+        $('#phoneError').hide();
         $('#register-password').removeClass('error');
         $('#passwordError').hide();
         $('#register-confirmpassword').removeClass('error');
@@ -19,9 +22,10 @@ $(document).ready(function(){
         let valid = true;
     
         let formData = {
-            firstname: $('#register-firstname').val(),
-            lastname: $('#register-lastname').val(),
+            first_name: $('#register-firstname').val(),
+            last_name: $('#register-lastname').val(),
             email: $('#register-email').val(),
+            phone: $('#register-phone').val(),
             password: $('#register-password').val(),
         };
 
@@ -37,6 +41,11 @@ $(document).ready(function(){
             valid = false;
             $('#register-lastname').addClass('error');
             $('#lastnameError').show();
+        }
+        if (formData.phone === "") {
+            valid = false;
+            $('#register-phone').addClass('error');
+            $('#phoneError').show();
         }
         if (formData.email === "") {
             valid = false;
@@ -61,7 +70,21 @@ $(document).ready(function(){
         } 
         
         if (valid) {
-            alert('Registration Successful!!');
+            $.ajax({
+                url: `${endPoint}/users`,
+                method: 'POST',
+                data: formData,
+                success: function(res){
+                    if (res.code === 304) {
+                    } else{
+                        alert(`Registration Successful!!`)
+                        window.location.href = "index.html"
+                    }
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
         }
     });
 
@@ -100,8 +123,24 @@ $(document).ready(function(){
         } 
     
         if (valid) {
-            alert('Login Successful!!');
-            window.location.href = "index.html"
+            $.ajax({
+                url: `${endPoint}/users/login`,
+                method: 'POST',
+                data: loginData,
+                success: function(res){
+                    console.log(res);
+                    localStorage.setItem("loginDetails", JSON.stringify(res))
+                    if (res.code === 404) {
+                        $('#none').show()
+                    }else{
+                        alert('login Successful!!')
+                        window.location.href = "index.html"
+                    }
+                },
+                error: function(err){
+                    console.log(err)
+                }
+            })
         }
     });
 });
