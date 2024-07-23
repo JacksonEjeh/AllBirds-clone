@@ -95,8 +95,28 @@ $(document).ready(function(){
         $('.profile_dropdown').slideToggle()
     })
     
+    $('#myAccount').click(function(){
+        window.location.href = "profile.html"
+    })
+    
+    $('#logOut').click(function(){
+        window.location.href = "login.html"
+    })
+
     $(document).on('click', '#addProduct', function(){
         $('.dashboard_container').hide()
         $('.addProduct_page').show()
     })
+
+    let merchantsDetails = JSON.parse(localStorage.getItem("merchantLoginDetails"))
+
+    let firstName = merchantsDetails.first_name
+    let lastName = merchantsDetails.last_name
+    let storeName = merchantsDetails.store_name
+
+    function updateAccountName(){
+        $('.mainName').html(lastName +" " + firstName)
+        $('.shopName').html(storeName)
+    }
+    updateAccountName()
 })
