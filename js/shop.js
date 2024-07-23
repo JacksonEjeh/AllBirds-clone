@@ -280,8 +280,8 @@ $(document).ready(function(){
     $('.jShopItemImg').click(function(){
         window.location.href = "product_page.html"
     })
-    $('.jShopItemTitle').click(function(){
-        window.location.href = "product_page.html"
+    $('.jShopItemImg1').click(function(){
+        window.location.href = "product_page2.html"
     })
 
 })

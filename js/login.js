@@ -75,10 +75,13 @@ $(document).ready(function(){
                 method: 'POST',
                 data: formData,
                 success: function(res){
+                    console.log(res);
                     if (res.code === 304) {
+                        $('#none').hide()
+                        $('.err1').html('Email already exist')
                     } else{
                         alert(`Registration Successful!!`)
-                        window.location.href = "index.html"
+                        window.location.href = "login.html"
                     }
                 },
                 error: function(err){
@@ -88,8 +91,8 @@ $(document).ready(function(){
         }
     });
 
-     // Login form validation
-     $('#loginForm').on('submit', function(event){
+    // Login form validation
+    $('#loginForm').on('submit', function(event){
         event.preventDefault();
     
         $('#login-email').removeClass('error');
@@ -129,12 +132,13 @@ $(document).ready(function(){
                 data: loginData,
                 success: function(res){
                     console.log(res);
-                    localStorage.setItem("loginDetails", JSON.stringify(res))
+                    localStorage.setItem("userDetails", JSON.stringify(res))
                     if (res.code === 404) {
                         $('#none').show()
+                        $('.err1').hide()
                     }else{
                         alert('login Successful!!')
-                        window.location.href = "index.html"
+                        window.location.href = "profile_page.html"
                     }
                 },
                 error: function(err){

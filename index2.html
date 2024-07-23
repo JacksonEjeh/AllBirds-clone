@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login || Page</title>
+    <title>Home || Page</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/shop.css">
-    <link rel="stylesheet" href="style/profile_page.css">
 </head>
 <body>
     <div class="j_topbar">
@@ -437,131 +436,348 @@
         </div>
     </div>
 
-    <div class="profile-card">
-        <div class="profile-header">
-            <h2 style="font-size: 20px;">Welcome Abdulrasheed</h2>
-        </div>
-        <div class="profile-content">
-            <p id="firstName"><strong>First Name:</strong></p>
-            <p id="lastName"><strong>Last Name:</strong></p>
-            <p id="email"><strong>Email:</strong></p>
-            <p id="phone"><strong>Phone:</strong></p>
-        </div>
-        <div class="profile-btn">
-            <button id="editProfileBtn">Edit Profile</button>
-            <button id="changePasswordBtn">Change Password</button>
-            <button id="logout-button">Logout</button>
-        </div>
-    </div>
 
-    <!-- Edit Profile Modal -->
-    <div id="editProfileModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <form id="editProfileForm">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName1" name="firstName" required>
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName1" name="lastName" value="" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email1" name="email" value="" required>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone1" name="phone" value="" required>
-                <button class="modal-btn" type="submit">Save Changes</button>
+
+    <header>
+        <img src="images/image header overlay.jpg" alt="Shoes">
+        <div class="r-overlay">
+            <h1>Breathable By Nature</h1>
+            <p>Airy, light, rooted in comfort. Explore the Tree Collection.</p>
+            <div>
+                <button>Shop Men</button>
+                <button>Shop Women</button>
+            </div>
+        </div>
+        <div class="r-featured-box">
+            <h2>FEATURED</h2>
+            <ul>
+                <li>Men's Shoes</li>
+                <li>Women's Shoes</li>
+                <li>New Arrivals</li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="r_container_1">
+        <section>
+            <h2>Our Favorites</h2>
+            <div class="r-category-buttons">
+                <button>FOR EVERYDAY</button>
+                <button>FOR TRAVEL</button>
+                <button>FOR ACTIVITY</button>
+            </div>
+            <div class="r-card1-grid1">
+                <div class="r-card1">
+                    <img src="images/Fav 1.jpg" alt="Tree Dasher 2">
+                    <div class="r-content1">
+                        <h3>Tree Dasher 2</h3>
+                        <div class="r-sub-content">
+                            <img src="images/Tree.png" alt="" class="tree">
+                            <p>Bouncy, Lightweight Active Shoe</p>
+                        </div>
+                        <div class="r-buttons">
+                            <button class="r-btn">SHOP MEN</button>
+                            <button class="r-btn">SHOP WOMEN</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="r-card1">
+                    <img src="images/Fav 2.jpg" alt="Tree Runner Go">
+                    <div class="r-content1">
+                        <h3>Tree Runner Go</h3>
+                        <div class="r-sub-content">
+                            <img src="images/Tree.png" alt="" class="tree">
+                            <p>Reimagined Breezy, Everyday Sneaker</p>
+                        </div>
+                        <div class="r-buttons">
+                            <button class="r-btn">SHOP MEN</button>
+                            <button class="r-btn">SHOP WOMEN</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="r-card1">
+                    <img src="images/Fav 3.jpg" alt="Tree Runner">
+                    <div class="r-content1">
+                        <h3>Tree Runner</h3>
+                        <div class="r-sub-content">
+                            <img src="images/Tree.png" alt="" class="tree">
+                            <p>Breezy, Everyday Sneaker</p>
+                        </div>
+                        <div class="r-buttons">
+                            <button class="r-btn">SHOP MEN</button>
+                            <button class="r-btn">SHOP WOMEN</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="r_container_2">
+        <div class="r_multi_shoes">
+            <img src="images/multiple shoes.jpg" alt="">
+        </div>
+        <div class="r_dive_in">
+            <h2 style="margin-bottom: 20px; font-size: 30px;">Dive In</h2>
+            <span>Deep blues. Cool whites. Vibrant pops of pink. Our breeziest styles, now in new summer colors.</span>
+            <div class="r-category-buttons1">
+                <button>SHOP MEN</button>
+                <button>SHOP WOMEN</button>
+            </div>
+        </div>
+        <div class="r-new-arrival1">
+            <h2>New Arrivals</h2>
+        </div>
+        <div class="slider-container">
+        <button class="prev-btn">&#10094;</button>
+            <div class="slider">
+                <div class="slider-track">
+                    <div class="r_card_grid">
+            <div class="r_card">
+                <img src="images/arrival 1.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Men's Tree Runner Go</h3>
+                    <p>Limited Edition Color, Natural Black/Navy</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/arrival 2.png" alt="Women's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Women's Tree Runner Go</h3>
+                    <p>Limited Edition Color, Breezy Blue</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/arrival 3.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Men's Tree Runner Go</h3>
+                    <p>Limited Edition Color, Rugged Green</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 4.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Women's SuperLight Tree Runner</h3>
+                    <p>Limited Edition Color, Deep Navy/Basin Pink</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 5.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Men's SuperLight Tree Runner</h3>
+                    <p>Limited Edition Color, Blizzard/Bloom Coral</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 6.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Women's Tree Dasher 2</h3>
+                    <p>Limited Edition Color, Deep Navy/Basin Pink</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 7.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Men's Tree Dasher 2</h3>
+                    <p>Limited Edition Color, Blizzard/Bloom Coral</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 8.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Women's Tree Dasher Relay</h3>
+                    <p>Limited Edition Color, Blizzard/BAsin Blue</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 9.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Men's Wool Runner 2</h3>
+                    <p>Limited Edition Color, Light Grey/True Navy</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/slider 10.png" alt="Men's Tree Runner Go">
+                <div class="r_content">
+                    <h3>Women's Courier</h3>
+                    <p>Limited Edition Color, Natural Black/basin Blue</p>
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+        <button class="next-btn">&#10095;</button>
+        </div>
+        <div class="r_multi_shoes">
+                <img src="images/B&W kicks guy.jpg" alt="">
+        </div>
+        <div class="r_dive_in">
+            <h2 style="margin-bottom: 20px; font-size: 30px; font-weight: 700;">From Cardio To Patio</h2>
+            <span>All the bouncy active shoes you need to keep in stride with the season.</span>
+            <div class="r-category-buttons1">
+                <button>SHOP MEN</button>
+                <button>SHOP WOMEN</button>
+            </div>
+        </div>
+        <div class="r-shop-2">
+            <h2>Shop The Collections</h2>
+        </div>
+        <div class="slider-container">
+            <button class="prev-btn">&#10094;</button>
+                <div class="slider">
+                    <div class="slider-track">
+                        <div class="r_card_grid">
+                            <div class="r_card">
+                                <img src="images/collection 1.jpg" alt="Tree Dasher 2">
+                                <div class="r_content1">
+                                    <h3>New Arrivals</h3>
+                                    <p>The latest styles and limited edition colors that you can only find here (while they last, that is).</p>
+                                </div>
+                            </div>
+                            <div class="r_card">
+                                <img src="images/collection 2.jpg" alt="Tree Runner Go">
+                                <div class="r_content1">
+                                    <h3>Get Travel Ready</h3>
+                                    <p>Versatile style plus packable design equals shoes that are always good to go.</p>
+                                </div>
+                            </div>
+                            <div class="r_card">
+                                <img src="images/collection 3.jpg" alt="Tree Runner">
+                                <div class="r_content1">
+                                    <h3>Lighter Shoes for Warmer Days</h3>
+                                    <p>The secret sauce to a good summer? Light, breezy shoes made with our innovative eucalyptus fiber.</p>
+                                </div>
+                            </div>
+                            <div class="r_card">
+                                <img src="images/lady slider.jpg" alt="Tree Runner">
+                                <div class="r_content1">
+                                    <h3>The SuperLight Collection</h3>
+                                    <p>Barely-there feel. Light-as-air fit. Meet our lightest and lowest carbon footprint to date.</p>
+                                </div>
+                            </div>
+                            <div class="r_card">
+                                <img src="images/bestseller.jpg" alt="Tree Runner">
+                                <div class="r_content1">
+                                    <h3>Bestsellers</h3>
+                                    <p>We asked around, and it turns out these styles have a pretty devoted fanbase.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <button class="next-btn">&#10095;</button>
+            </div>
+        <div class="r_multi_shoes">
+            <img src="images/pic mix.jpg" alt="">
+        </div>
+        <div class="r_dive_in">
+            <h2 style="margin-bottom: 20px; font-size: 30px; font-weight: 700;">More Updates About Less Carbon</h2>
+            <span>Reducing the carbon footprint of our products is at the heart of everything we do. And we've got good news: we continue to make headway. Read about our progress from 2022 in our latest Flight Status report.</span>
+            <div class="r-category-buttons1">
+                <button>OUR SUSTAINABILITY STRATEGY</button>
+            </div>
+        </div> <br><br><br>
+        <div class="r-new-arrival">
+            <h2>Allbirds Sustainability Initiatives</h2>
+        </div>
+        <div class="r-card1-grid2">
+            <div class="r_card">
+                <img src="images/ReRun-Site-StoryCard.jpg" alt="Tree Dasher 2">
+                <div class="r_content1">
+                    <h3>Allbirds ReRun™</h3>
+                    <p>Introducing our resale marketplace where you can shop slightly imperfect and gently used products, extending their life and lowering our impact on the planet.</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/2022 flight status.jpg" alt="Tree Runner Go">
+                <div class="r_content1">
+                    <h3>2022 Flight Status Report</h3>
+                    <p>Our version of a sustainability report is here, highlighting our progress across a variety of areas in 2022.</p>
+                </div>
+            </div>
+            <div class="r_card">
+                <img src="images/sheep pix.jpg" alt="Tree Runner">
+                <div class="r_content1">
+                    <h3>We're A Certified B Corp</h3>
+                    <p>From the very beginning, the environment has been a stakeholder here.</p>
+                </div>
+            </div>
+        </div><br><br><br><br>
+        <section class="r-email-signup">
+            <h2>Want First Dibs?</h2>
+            <p>Join our email list and be the first to know about new limited edition products, material innovations, and lots of other fun updates.</p>
+            <form>
+                <input type="email" placeholder="Enter Your Email Address">
+                <button type="submit">Sign Up</button>
             </form>
-        </div>
-    </div>
-
-    <!-- Change Password Modal -->
-    <div id="changePasswordModal" class="modal">
-        <div class="modal-content1">
-            <span class="close">&times;</span>
-            <form id="changePasswordForm">
-                <label for="oldPassword">Old Password:</label>
-                <input type="password" id="oldPassword" name="oldPassword" required>
-                <label for="newPassword">New Password:</label>
-                <input type="password" id="newPassword" name="newPassword" required>
-                <button class="modal-btn" type="submit">Change Password</button>
-            </form>
-        </div>
-    </div>
-
+            <p class="r-note">Note: You can opt-out at any time. See our <a href="#">Privacy Policy </a> and <a href="#">Terms</a>.</p>
+        </section>
     
-    <section class="r-approach">
-        <h2>The Allbirds Approach</h2>
-        <div class="r-approach-container">
-            <div class="r-approach-item">
-                <h3>Wear-All-Day Comfort</h3>
-                <p class="allP">Lightweight, bouncy, and wildly comfortable, Allbirds shoes make any outing feel effortless. Slip in, lace up, or slide them on and enjoy the comfy support.</p>
-                <a class="login_a" href="#">Learn More</a>
+        <section class="r-approach">
+            <h2>The Allbirds Approach</h2>
+            <div class="r-approach-container">
+                <div class="r-approach-item">
+                    <h3>Wear-All-Day Comfort</h3>
+                    <p>Lightweight, bouncy, and wildly comfortable, Allbirds shoes make any outing feel effortless. Slip in, lace up, or slide them on and enjoy the comfy support.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="r-approach-item">
+                    <h3>Sustainability In Every Step</h3>
+                    <p>From materials to transport, we're working to reduce our carbon footprint to near zero. Holding ourselves accountable and striving for climate goals isn't a 30-year goal—it's now.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="r-approach-item">
+                    <h3>Materials From The Earth</h3>
+                    <p>We replace petroleum-based synthetics with natural alternatives wherever we can. Like using wool, tree fiber, and sugar cane. They're soft, breathable, and better for the planet—win, win, win.</p>
+                    <a href="#">Learn More</a>
+                </div>
             </div>
-            <div class="r-approach-item">
-                <h3>Sustainability In Every Step</h3>
-                <p class="allP">From materials to transport, we're working to reduce our carbon footprint to near zero. Holding ourselves accountable and striving for climate goals isn't a 30-year goal—it's now.</p>
-                <a class="login_a" href="#">Learn More</a>
-            </div>
-            <div class="r-approach-item">
-                <h3>Materials From The Earth</h3>
-                <p class="allP">We replace petroleum-based synthetics with natural alternatives wherever we can. Like using wool, tree fiber, and sugar cane. They're soft, breathable, and better for the planet—win, win, win.</p>
-                <a class="login_a" href="#">Learn More</a>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
     <footer>
-        <div>
-            <section class="r-email-signup">
-                <p class="allP">Enter your email to stay in touch!</p>
-                <form>
-                    <input type="email">
-                    <button type="submit">Sign Up</button>
-                </form>
-            </section>
-        </div>
         <div class="footer-container">
             <div class="footer-section">
                 <h3>HELP</h3>
                 <ul>
-                    <li><a class="login_a" href="#">Chat with us!</a></li>
-                    <li><a class="login_a" href="#">1-888-963-8944</a></li>
-                    <li><a class="login_a" href="#">1-814-251-9966 (Text)</a></li>
-                    <li><a class="login_a" href="#">help@allbirds.com</a></li>
-                    <li><a class="login_a" href="#">Returns/Exchanges</a></li>
-                    <li><a class="login_a" href="#">FAQ/Contact Us</a></li>
-                    <li><a class="login_a" href="#">Afterpay</a></li>
+                    <li><a href="#">Chat with us!</a></li>
+                    <li><a href="#">1-888-963-8944</a></li>
+                    <li><a href="#">1-814-251-9966 (Text)</a></li>
+                    <li><a href="#">help@allbirds.com</a></li>
+                    <li><a href="#">Returns/Exchanges</a></li>
+                    <li><a href="#">FAQ/Contact Us</a></li>
+                    <li><a href="#">Afterpay</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>SHOP</h3>
                 <ul>
-                    <li><a class="login_a" href="#">Men's Shoes</a></li>
-                    <li><a class="login_a" href="#">Women's Shoes</a></li>
-                    <li><a class="login_a" href="#">Men's Apparel</a></li>
-                    <li><a class="login_a" href="#">Women's Apparel</a></li>
-                    <li><a class="login_a" href="#">Socks</a></li>
-                    <li><a class="login_a" href="#">Shoe Finder</a></li>
-                    <li><a class="login_a" href="#">Gift Cards</a></li>
-                    <li><a class="login_a" href="#">Refer a Friend</a></li>
+                    <li><a href="#">Men's Shoes</a></li>
+                    <li><a href="#">Women's Shoes</a></li>
+                    <li><a href="#">Men's Apparel</a></li>
+                    <li><a href="#">Women's Apparel</a></li>
+                    <li><a href="#">Socks</a></li>
+                    <li><a href="#">Shoe Finder</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">Refer a Friend</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>COMPANY</h3>
                 <ul>
-                    <li><a class="login_a" href="#">Our Stores</a></li>
-                    <li><a class="login_a" href="#">Our Story</a></li>
-                    <li><a class="login_a" href="#">Our Materials</a></li>
-                    <li><a class="login_a" href="#">Sustainability</a></li>
-                    <li><a class="login_a" href="#">Investors</a></li>
-                    <li><a class="login_a" href="#">Shoe Care</a></li>
-                    <li><a class="login_a" href="#">Partnerships</a></li>
-                    <li><a class="login_a" href="#">Affiliates</a></li>
-                    <li><a class="login_a" href="#">Bulk Orders</a></li>
-                    <li><a class="login_a" href="#">Careers</a></li>
-                    <li><a class="login_a" href="#">Press</a></li>
-                    <li><a class="login_a" href="#">Allbirds Responsible Disclosure Program</a></li>
-                    <li><a class="login_a" href="#">California Transparency Act</a></li>
-                    <li><a class="login_a" href="#">Community Offers</a></li>
-                    <li><a class="login_a" href="#">Our Blog - The Perch</a></li>
+                    <li><a href="#">Our Stores</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Our Materials</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Shoe Care</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Bulk Orders</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Allbirds Responsible Disclosure Program</a></li>
+                    <li><a href="#">California Transparency Act</a></li>
+                    <li><a href="#">Community Offers</a></li>
+                    <li><a href="#">Our Blog - The Perch</a></li>
                 </ul>
             </div>
         </div>
@@ -569,42 +785,43 @@
         <div class="footer-bottom">
             <div class="footer-follow">
                 <h3>FOLLOW THE FLOCK</h3>
-                <p class="allP">Exclusive offers, a heads up on new things, and sightings of Allbirds in the wild. Oh, we have cute sheep, too. #allbirds</p>
+                <p>Exclusive offers, a heads up on new things, and sightings of Allbirds in the wild. Oh, we have cute sheep, too. #allbirds</p>
                 <div class="social-icons">
-                    <a class="login_a" href="#"><img src="images/insta.svg" alt="Instagram"></a>
-                    <a class="login_a" href="#"><img src="images/Tiktok-50x50.png" alt="TikTok"></a>
-                    <a class="login_a" href="#"><img src="images/twitter.svg" alt="Twitter"></a>
-                    <a class="login_a" href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-                    <a class="login_a" href="#"><img src="images/Youtube-50x50.png" alt="YouTube"></a>
-                    <a class="login_a" href="#"><img src="images/Pinterest-50x50.png" alt="Pinterest"></a>
+                    <a href="#"><img src="images/insta.svg" alt="Instagram"></a>
+                    <a href="#"><img src="images/Tiktok-50x50.png" alt="TikTok"></a>
+                    <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="images/Youtube-50x50.png" alt="YouTube"></a>
+                    <a href="#"><img src="images/Pinterest-50x50.png" alt="Pinterest"></a>
                 </div>
             </div>
             <div class="footer-certifications">
                 <img src="images/icon-b-corp.svg" alt="Certified B Corporation">
             </div>
             <div class="footer-language">
-                <a class="login_a" href="#"><img src="images/flag-us.svg" alt="USA"></a>
-                <a class="login_a" href="#"><img src="images/flag-ca.svg" alt="Canada"></a>
-                <a class="login_a" href="#"><img src="images/3rd flag.svg" alt="UK"></a>
-                <a class="login_a" href="#"><img src="images/4th flag.svg" alt="EU"></a>
-                <a class="login_a" href="#"><img src="images/5th flag.svg" alt="Japan"></a>
-                <a class="login_a" href="#"><img src="images/6th flag.svg" alt="Korea"></a>
-                <a class="login_a" href="#"><img src="images/7th flag.svg" alt="Australia"></a>
-                <a class="login_a" href="#"><img src="images/8th flag.svg" alt="Japan"></a>
-                <a class="login_a" href="#"><img src="images/last flag.svg" alt="South-Korea"></a>
+                <a href="#"><img src="images/flag-us.svg" alt="USA"></a>
+                <a href="#"><img src="images/flag-ca.svg" alt="Canada"></a>
+                <a href="#"><img src="images/3rd flag.svg" alt="UK"></a>
+                <a href="#"><img src="images/4th flag.svg" alt="EU"></a>
+                <a href="#"><img src="images/5th flag.svg" alt="Japan"></a>
+                <a href="#"><img src="images/6th flag.svg" alt="Korea"></a>
+                <a href="#"><img src="images/7th flag.svg" alt="Australia"></a>
+                <a href="#"><img src="images/8th flag.svg" alt="Japan"></a>
+                <a href="#"><img src="images/last flag.svg" alt="South-Korea"></a>
             </div>
         </div>
 
         <div class="footer-legal">
-            <p class="allP">© 2024 Allbirds, Inc. All Rights Reserved. <a href="#">Terms</a>, <a href="#">Privacy & Accessibility</a></p>
-            <p class="allP"><a  class="login_a" href="#">Do Not Sell My Personal Information</a></p>
+            <p>© 2024 Allbirds, Inc. All Rights Reserved. <a href="#">Terms</a>, <a href="#">Privacy & Accessibility</a></p>
+            <p><a href="#">Do Not Sell My Personal Information</a></p>
         </div>
     </footer>
-
-
-    <script src="js/login.js"></script>
-    <script src="js/shop.js"></script>
-    <script src="js/profile_page.js"></script>
     
+
+
+
+
+    <script src="js/home_script.js"></script>
+    <script src="js/shop.js"></script>
 </body>
 </html>

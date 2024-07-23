@@ -2,6 +2,11 @@
     font-family: allbird;
     src: url(fonts/allbird.woff2)
 }
+.err1{
+    color: red;
+    font-family: sans-serif;
+    font-size: 12px;
+}
 body {
     /* font-family: Arial, sans-serif; */
     font-family: allbird;
@@ -354,6 +359,7 @@ button:disabled {
 #none{
     display: none;
     color: red;
+    font-family: sans-serif;
+    font-size: 13px;
     font-weight: bold;
-    font-size: 20px;
 }
