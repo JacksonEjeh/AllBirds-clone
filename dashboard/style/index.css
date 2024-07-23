@@ -10,7 +10,8 @@
   font-style: normal;
 }
 .active{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 }
 .major_container{
     display: flex;
@@ -34,7 +35,7 @@
     border-bottom: 1px solid #ddd;
     display: flex;
     align-items: baseline;
-    padding: 10px 20px;
+    padding: 14.5px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -47,6 +48,7 @@
 .navLogo h2{
     font-family: "Playwrite DK Uloopet", cursive;
     color: green;
+    letter-spacing: .5px;
 }
 .leftTop{
     padding-top: 100px;
@@ -88,7 +90,8 @@
     margin-bottom: 10px;
 }
 .setting:hover{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 }
 .setting img{
     height: 20px;
@@ -108,7 +111,8 @@
     margin-bottom: 30px;
 }
 .help:hover{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 }
 .help img{
     height: 20px;
@@ -141,7 +145,8 @@
     margin-bottom: 10px;
 }
 .eCommerce:hover{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 }
 .eCommerce_dropdown{
     background-color: white;
@@ -183,7 +188,8 @@
     margin-bottom: 10px;
 }
 .category:hover{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 
 }
 .category_dropdown{
@@ -211,7 +217,8 @@
     margin-bottom: 10px;
 }
 .orders:hover{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 
 }
 .orders_dropdown{
@@ -240,7 +247,8 @@
     margin-bottom: 10px;
 }
 .user:hover{
-    background-color: rgba(0, 128, 0, 0.1);
+    background-color: green;
+    color: white;
 
 }
 .user_dropdown{
@@ -329,8 +337,9 @@
 .search{
     display: flex;
     align-items: center;
-    border: .5px solid gray;
+    border: .5px solid #ddd;
     padding: 5px;
+    padding-right: 20px;
     border-radius: 15px;
 }
 .navbtn{

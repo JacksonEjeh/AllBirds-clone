@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/profile.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="profile_container">
+        <div class="leftProfilePage">
+            <div class="banner">
+                <div class="icon_img"></div>
+                <div class="marchantFullName">
+                    <h2 class="mainName"></h2>
+                </div>
+            </div>
+            <div class="profileOptions">
+                <div id="account" class="account active">
+                    Account
+                </div>
+                <div id="password" class="account">
+                    Password
+                </div>
+                <div class="account">
+                    Security
+                </div>
+                <div class="account">
+                    Application
+                </div>
+                <div class="account">
+                    Notification
+                </div>
+            </div>
+        </div>
+        <div class="rightProfilePage">
+            <div class="account_settinds_container">
+                <div class="account_setting">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <img class="btn4" src="../images/icons/back-button.png" alt="">
+                        <h1>Account Settings</h1>
+                    </div>
+                    <div class="updatebtn">
+                        <button class="btn2">Edit</button>
+                    </div>
+                </div>
+                <div class="form_container">
+                    <div class="form_container_left">
+                        <form class="updateProfile">
+                            <div class="last_Name m-b">
+                                <p class="label">First Name <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput" type="text" id="firstName" disabled>
+                            </div>
+                            <div class="last_Name m-b">
+                                <p class="label">Email <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput2" type="text" id="email" disabled>
+                            </div>
+                            <div class="last_Name m-b">
+                                <p class="label">Store Name <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput" type="text" id="storeName" disabled>
+                            </div>
+                            <div class="last_Name m-b">
+                                <p class="label">State <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput" type="text" id="state" disabled>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="form_container_right">
+                        <form class="updateProfile">
+                            <div class="last_Name m-b">
+                                <p class="label">Last Name <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput" type="text" id="lastName" disabled>
+                            </div>
+                            <div class="last_Name m-b">
+                                <p class="label">Phone <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput2" type="text" id="phone" disabled>
+                            </div>
+                            <div class="last_Name m-b">
+                                <p class="label">Description <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput" type="text" id="descp" disabled>
+                            </div>
+                            <div class="last_Name m-b">
+                                <p class="label">District <span style="font-weight: bold; color: red;">*</span></p>
+                                <input class="allInput" type="text" id="district" disabled>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="socials">
+                    <p class="label">Socials <span style="font-weight: bold; color: red;">*</span></p>
+                    <form class="updateProfile">
+                        <div class="social_holder">
+                            <div class="twitterField">
+                                <div class="social_icons">
+                                    <img src="../images/icons/twitter.png" alt="">
+                                </div>
+                                <input class="allInput1" type="text" id="twitter" disabled>
+                            </div>
+                            <div class="twitterField">
+                                <div class="social_icons">
+                                    <img src="../images/icons/facebook.png" alt="">
+                                </div>
+                                <input class="allInput1" type="text" id="facbook" disabled>
+                            </div>
+                            <div class="twitterField">
+                                <div class="social_icons">
+                                    <img src="../images/icons/instagram (4).png" alt="">
+                                </div>
+                                <input class="allInput1" type="text" id="insta" disabled>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <form class="updateProfile">
+                        <button class="btn1">Update Info</button>
+                    </form>
+                    <button class="btn3">Cancel</button>
+                </div>
+            </div>
+            <div class="password_setting_container">
+                <div class="account_setting">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <img class="btn4" src="../images/icons/back-button.png" alt="">
+                        <h1>Password Settings</h1>
+                    </div>
+                </div>
+                <form id="UpdatePassword">
+                    <div class="phone m-b">
+                        <p class="label">Old password <span style="font-weight: bold; color: red;">*</span></p>
+                        <input id="oldPassword" class="passwordField" type="password" placeholder="Enter old password">
+                        <p id="err2"></p>
+                    </div>
+                    <div class="phone m-b">
+                        <p class="label">New password <span style="font-weight: bold; color: red;">*</span></p>
+                        <input id="newPassword" class="passwordField" type="password" placeholder="Enter new password">
+                        <p id="err3"></p>
+                    </div>
+                    <div class="phone m-b">
+                        <p class="label">Confirm password <span style="font-weight: bold; color: red;">*</span></p>
+                        <input id="confirmPassword" class="passwordField" type="password" placeholder="Confirm password">
+                        <p id="err1"></p>   
+                    </div>
+                    <div class="password_update">
+                        <button>Update password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/profile.js"></script>
+</body>
+</html>

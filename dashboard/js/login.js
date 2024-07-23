@@ -29,7 +29,7 @@ $(document).ready(function(){
                 data: loginData,
                 success: function(res){
                     console.log(res);
-                    localStorage.setItem("loginDetails", JSON.stringify(res))
+                    localStorage.setItem("merchantLoginDetails", JSON.stringify(res))
                     if (res.code === 404) {
                         $('#incorrectDetail').show()
                     }else{
