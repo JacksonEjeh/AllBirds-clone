@@ -78,7 +78,7 @@ $(document).ready(function(){
                     if (res.code === 304) {
                     } else{
                         alert(`Registration Successful!!`)
-                        window.location.href = "index.html"
+                        window.location.href = "login.html"
                     }
                 },
                 error: function(err){
@@ -129,12 +129,12 @@ $(document).ready(function(){
                 data: loginData,
                 success: function(res){
                     console.log(res);
-                    localStorage.setItem("loginDetails", JSON.stringify(res))
+                    localStorage.setItem("userDetails", JSON.stringify(res))
                     if (res.code === 404) {
                         $('#none').show()
                     }else{
                         alert('login Successful!!')
-                        window.location.href = "index.html"
+                         window.location.href = "profile_page.html"
                     }
                 },
                 error: function(err){
