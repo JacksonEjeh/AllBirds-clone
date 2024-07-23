@@ -143,10 +143,6 @@
     background-color: transparent;
     color: green;
 }
-
-.account_settinds_container{
-    /* display: none; */
-}
 .password_setting_container{
     display: none;
 }
