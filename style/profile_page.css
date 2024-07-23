@@ -84,7 +84,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
@@ -135,7 +135,7 @@ input {
     border-radius: 5px;
 }
 
-button[type="submit"] {
+.modal-btn {
     margin-top: 20px;
     padding: 10px;
     background: #4CAF50;
@@ -146,6 +146,6 @@ button[type="submit"] {
     transition: background 0.3s;
 }
 
-button[type="submit"]:hover {
+.modal-btn:hover {
     background: #45a049;
 }

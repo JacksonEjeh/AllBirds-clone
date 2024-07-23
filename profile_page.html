@@ -442,14 +442,15 @@
             <h2 style="font-size: 20px;">Welcome Abdulrasheed</h2>
         </div>
         <div class="profile-content">
-            <p><strong>First Name:</strong> Abdulrasheed</p>
-            <p><strong>Last Name:</strong> Badams</p>
-            <p><strong>Email:</strong> abdul.badams@example.com</p>
-            <p><strong>Phone:</strong> (123) 456-7890</p>
+            <p id="firstName"><strong>First Name:</strong></p>
+            <p id="lastName"><strong>Last Name:</strong></p>
+            <p id="email"><strong>Email:</strong></p>
+            <p id="phone"><strong>Phone:</strong></p>
         </div>
         <div class="profile-btn">
             <button id="editProfileBtn">Edit Profile</button>
             <button id="changePasswordBtn">Change Password</button>
+            <button id="logout-button">Logout</button>
         </div>
     </div>
 
@@ -459,14 +460,14 @@
             <span class="close">&times;</span>
             <form id="editProfileForm">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" value="Abdulrasheed" required>
+                <input type="text" id="firstName" name="firstName" required>
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" value="Badams" required>
+                <input type="text" id="lastName" name="lastName" value="" required>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="abdul.badams@example.com" required>
+                <input type="email" id="email" name="email" value="" required>
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" value="(123) 456-7890" required>
-                <button type="submit">Save Changes</button>
+                <input type="tel" id="phone" name="phone" value="" required>
+                <button class="modal-btn" type="submit">Save Changes</button>
             </form>
         </div>
     </div>
@@ -480,7 +481,7 @@
                 <input type="password" id="oldPassword" name="oldPassword" required>
                 <label for="newPassword">New Password:</label>
                 <input type="password" id="newPassword" name="newPassword" required>
-                <button type="submit">Change Password</button>
+                <button class="modal-btn" type="submit">Change Password</button>
             </form>
         </div>
     </div>
