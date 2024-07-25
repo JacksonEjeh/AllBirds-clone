@@ -6,7 +6,6 @@
 }
 .custom-select {
     position: relative;
-    margin-bottom: 50px;
 }
 .display{
     border: .5px solid #ddd;
@@ -38,8 +37,6 @@
 
 .option {
     padding: 0px 0px 0px 20px;
-    display: flex;
-    justify-content: space-between;
 }
 .option:hover{
     background-color: rgb(0, 60, 255);
@@ -55,10 +52,10 @@
     margin-right: 10px;
 }
 
-.playwrite-dk-uloopet-poppin {
-  font-family: "Playwrite DK Uloopet", cursive;
+.playfair-display-poppin {
+  font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 900;
   font-style: normal;
 }
 .active{
@@ -92,7 +89,8 @@
     background-color: #FDFDFD;
     border-bottom: 1px solid #ddd;
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    gap: 10px;
     padding: 14.5px 20px;
     position: fixed;
     top: 0;
@@ -104,8 +102,8 @@
     height: 40px;
 }
 .navLogo h2{
-    font-family: "Playwrite DK Uloopet", cursive;
-    color: green;
+    font-family: "Playfair Display", serif;
+    color: black;
     letter-spacing: .5px;
 }
 .leftTop{
@@ -124,7 +122,6 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 30px;
 }
 .dashboard:hover{
@@ -144,7 +141,6 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 10px;
 }
 .setting:hover{
@@ -164,7 +160,6 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 30px;
 }
 .help:hover{
@@ -197,7 +192,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 10px;
 }
 .eCommerce:hover{
@@ -239,7 +233,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 10px;
 }
 .category:hover{
@@ -267,7 +260,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 10px;
 }
 .orders:hover{
@@ -296,7 +288,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-radius: 10px;
     margin-bottom: 10px;
 }
 .user:hover{
@@ -842,15 +833,15 @@
 }
 .warn{
     font-family: sans-serif;
-    font-size: 13px;
-    letter-spacing: .5px;
+    font-size: 12px;
+    letter-spacing: .3px;
     color: grey;
 }
 .warn1{
     font-family: sans-serif;
-    font-size: 14px;
-    letter-spacing: .5px;
-    line-height: 20px;
+    font-size: 12px;
+    letter-spacing: .3px;
+    line-height: 17px;
     color: grey;
 }
 .addCategory_container{
