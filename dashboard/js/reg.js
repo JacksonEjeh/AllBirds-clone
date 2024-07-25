@@ -88,7 +88,7 @@ $(document).ready(function(){
                         $('#emailExist').show()
                     } else{
                         alert(`Registration Successful!! Click on the "GET STARTED" button to log-in`)
-                        // window.location.href = "login.html"
+                        window.location.href = "login.html"
                     }
                 },
                 error: function(err){

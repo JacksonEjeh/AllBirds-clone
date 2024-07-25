@@ -1367,3 +1367,46 @@
 .j_allbird_wear a{
     color: black;
 }
+
+.r-email-signup p {
+    letter-spacing: 1px;
+}
+.r-email-signup form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.r-email-signup input[type="email"] {
+    padding: 13px;
+    font-size: 1rem;
+    border: 3px solid #ccc;
+    /* border-radius: 5px 0 0 5px; */
+    outline: none;
+    width: 20vw;
+    border-bottom-color: 2px solid black;
+    border-bottom-color: white;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    font-weight: bold;
+    background-color: #4d5559;
+}
+.r-email-signup button {
+    padding: 15px;
+    font-size: 1rem;
+    border: none;
+    background-color: #4d5559;
+    color: #fff;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.r-email-signup button:hover{
+    background: white;
+    color: #000;
+    border: 2px solid black;
+}
