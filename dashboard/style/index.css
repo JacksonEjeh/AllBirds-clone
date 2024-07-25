@@ -1079,10 +1079,10 @@
 
 
 .addProduct_page{
-    /* display: none; */
+    display: none;
 }
 .dashboard_container{
-    display: none;
+    /* display: none; */
 }
 .addCategory_page{
     display: none;
