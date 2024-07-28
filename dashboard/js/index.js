@@ -136,6 +136,7 @@ $(document).ready(function(){
     })
     
     $('#logOut').click(function(){
+        localStorage.removeItem('merchantLoginDetails')
         window.location.href = "login.html"
     })
 
@@ -206,7 +207,8 @@ $(document).ready(function(){
                 method: 'POST',
                 data: categoryDetails,
                 success: function(res){
-                    window.location.reload()
+                    console.log(res);
+                    // window.location.reload()
                     alert('New category created')
                 },
                 error: function(err){
@@ -219,28 +221,32 @@ $(document).ready(function(){
     // $('#addCategory').on('submit', function(e){
     //     e.preventDefault()
 
-    //     let formData = new FormData()
-    //     let imageInput = $('#category_image')[0].files[0]
-    //     let categoryName = $('#category_name').val()
-    //     let merchantId = merchant_id
+    //     var formData = new FormData(this)
+    //     let merchantsDetails = localStorage.getItem("merchantLoginDetails")
+    //     let _id = JSON.parse(merchantsDetails)
+    //     id = _id.id
+    //     if(id){
+    //         formData.append('merchant_id', id)
+    //     }
+    //     console.log(formData)
 
-    //     formData.append('merchant_id', merchantId)
-    //     formData.append('name', categoryName)
-    //     formData.append('image', imageInput)
 
-    //     $.ajax({
-    //         url: `${endPoint}/categories`,
-    //         method: 'POST',
-    //         data: formData,
-    //         processData: false,
-    //         contentType: false,
-    //         success: function(res){
-    //             console.log(res);
-    //         },
-    //         error: function(err){
-    //             console.log(err);
-    //         }
-    //     })
+    //     $.ajax({ 
+    //         url: `${endPoint}/categories`, 
+    //         method: 'POST', 
+    //         data: formData, 
+    //         processData: false, 
+    //         // contentType: false, 
+    //         success: function (response) { 
+    //             console.log(response);                      
+    //             alert('Your form has been sent successfully.'); 
+    //         }, 
+    //         error: function (error) {                        
+    //             alert('error.'); 
+    //             console.error(error); 
+    //         } 
+    //     });
+
     // })
 
 
@@ -253,7 +259,6 @@ $(document).ready(function(){
             url: `${endPoint}/categories?merchant_id=${merchant_id}`,
             method: 'GET',
             success: function(res){
-                console.log(res);
                 res.forEach(function(i){
                     $('.categoryList_container').append(`
                         <div class="categoryList" data-id ="${i.id}">
@@ -275,6 +280,9 @@ $(document).ready(function(){
                                     </div>
                                 </div>
                         </div>
+                    `)
+                    $('#category').append(`
+                        <option value="${i.id}">${i.name}</option>
                     `)
                 })
             },
@@ -308,6 +316,7 @@ $(document).ready(function(){
         })
     })
 
+    // function for editing a particular category
     $(document).on('click', '#editCategory', function(){
         $('.dashboard_container').hide()
         $('.addProduct_page').hide()
@@ -324,7 +333,7 @@ $(document).ready(function(){
         // console.log(image);
         
         $('#editCategory_name').val(categoryTitle)
-        // $('#editCategory_image').val(image)
+        $('#editCategory_image').val(image)
 
         $('#editCategoryBtn').click(function(e){
             e.preventDefault()
@@ -384,5 +393,161 @@ $(document).ready(function(){
             $('.shipping_location_holder').slideToggle()
         }
     })
+    
 
+    
+
+    // validating addProduct form field and API call
+    $('#addProductForm').on('submit', function(event){
+        event.preventDefault()
+
+
+        let arrayOfProductImage = []
+        let image1 = $('#addProduct_image1').val()
+        let image2 = $('#addProduct_image2').val()
+        let image3 = $('#addProduct_image3').val()
+
+        let arrayOfShippingLocation = []
+        let location1 = $('#tag1').val()
+        let location2 = $('#tag2').val()
+        let location3 = $('#tag3').val()
+        let location4 = $('#tag4').val()
+        let location5 = $('#tag5').val()
+        let shipLocation = $('#searchInput').val()
+
+        arrayOfShippingLocation.push(location1, location2, location3, location4, location5)
+        arrayOfProductImage.push(image1, image2, image3)
+
+        var refund = $('#refund').is(':checked')
+        var discount = $('#discount').is(':checked')
+        var shipment = $('#shipment').is(':checked')
+        var category_id = $('#category').val()
+        console.log(category_id);
+
+        let productInfo = {
+            title: $('#productTitle').val(),
+            descp: $('#productDescp').val(),
+            price: $('#productPrice').val(),
+            brand: $('#productBrand').val(),
+            quantity: $('#quantity').val(),
+            currency: $('#currency').val(),
+            category: $('#category').val(),
+            min_qty: $('#minQty').val(),
+            max_qty: $('#maxQty').val(),
+            has_refund_policy: refund,
+            has_discount: discount,
+            has_shipment: shipment,
+            discount: $('#discountRate').val(),
+            discount_expiration: $('#discountExpiry').val(),
+            images: arrayOfProductImage,
+            shipping_locations: arrayOfShippingLocation,
+            category_id: category_id,
+            merchant_id: merchant_id
+        } 
+
+        let valid =  true
+        if (productInfo.title === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#productTitle').addClass('errBorder')
+        } else if (productInfo.price === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#productPrice').addClass('errBorder')
+            $('#productTitle').removeClass('errBorder')
+        } else if (productInfo.brand === "") {
+           valid = false
+           $('#addProduct_err').text('There,s an empty field in your form')
+           $('#productBrand').addClass('errBorder')
+           $('#productPrice').removeClass('errBorder')
+        } else if (productInfo.descp === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#productDescp').addClass('errBorder')
+           $('#productBrand').removeClass('errBorder')
+        } else if (productInfo.currency === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#currency').addClass('errBorder')
+            $('#productDescp').removeClass('errBorder')
+        } else if (productInfo.quantity === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#quantity').addClass('errBorder')
+            $('#currency').removeClass('errBorder')
+        } else if (productInfo.category === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#category').addClass('errBorder')
+            $('#quantity').removeClass('errBorder')
+        } else if (productInfo.min_qty === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#minQty').addClass('errBorder')
+            $('#category').removeClass('errBorder')
+        } else if (productInfo.max_qty === "") {
+            valid = false
+            $('#addProduct_err').text('There,s an empty field in your form')
+            $('#maxQty').addClass('errBorder')
+            $('#minQty').removeClass('errBorder')
+        } else if (image1 === "") {
+            valid = false
+            $('#addProduct_image1').addClass('errBorder')
+            $('.warn1').addClass('imgErr')
+            $('#maxQty').removeClass('errBorder')
+        } else if (image2 === "") {
+            valid = false
+            $('#addProduct_image2').addClass('errBorder')
+            $('#addProduct_image1').removelass('errBorder')
+            $('.warn1').addClass('imgErr')
+        } else if (image3 === "") {
+            valid = false
+            $('#addProduct_image3').addClass('errBorder')
+            $('#addProduct_image2').removeClass('errBorder')
+            $('.warn1').addClass('imgErr')
+
+        }  else {
+            valid = true
+            $.ajax({
+                url: `${endPoint}/products`,
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(productInfo),
+                success: function(res){
+                    console.log(res);
+                    alert('product posted successful')
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
+        }
+
+        if (refund) {
+            localStorage.setItem("refund", JSON.stringify(refund))
+        }
+        
+        if (discount === true) {
+            if (productInfo.discount === "") {
+                valid = false
+                $('#addProduct_err').text('There,s an empty field in your form')
+                $('#discountRate').addClass('errBorder')
+            } else if (productInfo.discount_expiration === "") {
+                valid = false
+                $('#addProduct_err').text('There,s an empty field in your form')
+                $('#discountExpiry').addClass('errBorder')
+            }
+        }
+        if (shipment === true) {
+            if (shipLocation === "") {
+                valid = false
+                $('#searchInput').addClass('errBorder')
+                $('#shipLocationErr').text('You need to add at least a shipping location')
+            }
+        }
+       
+
+        
+
+    })
 })
