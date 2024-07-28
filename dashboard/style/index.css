@@ -644,8 +644,17 @@
     margin-bottom: 40px;
 }
 .product_overview_title h3{
-    font-family: sans-serif;
-    letter-spacing: 1px;
+    font-size: 20px;
+    color: green;
+}
+.product_overview_titleDash{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.product_overview_titleDash h3{
+    font-size: 16px;
 }
 .viewAll{
     display: flex;
@@ -917,6 +926,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 .showing{
     display: flex;
@@ -940,7 +950,7 @@
     align-items: center;
     border: .5px solid #ddd;
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px;
     width: 40%;
 }
 .searchBar input{
@@ -954,7 +964,7 @@
 .addCategory_btn button{
     font-size: 14px;
     font-weight: bold;
-    padding: 10px 80px;
+    padding: 15px 80px;
     border: 1px solid green;
     border-radius: 15px;
     background-color: transparent;
@@ -970,7 +980,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: rgba(0, 128, 0, 0.055);
+    background-color: #f5f5f5;
     border-radius: 15px;
     margin: 25px 0;
 }
@@ -980,11 +990,74 @@
     padding: 5px;
 }
 .categoryList:hover{
-    background-color: rgba(0, 128, 0, 0.055);
+    background-color: #f5f5f5;
     border-radius: 15px;
+}
+.categoryListDashboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
 }
 .categoryNameTitle{
     width: 50%;
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+.productTitle_holder{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    /* margin: 25px 0; */
+}
+.productList{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 25px;
+}
+.productList:hover{
+    background-color: #f5f5f5;
+}
+.productListDash{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+}
+.productNameTitle{
+    width: 40%;
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+.productNameTitleDashboard{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+.productIdTitle{
+    width: 25%;
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+.productPriceTitle{
+    width: 12.5%;
+    font-weight: bold;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+.productQuantityTitle{
+    width: 11.5%;
     font-weight: bold;
     letter-spacing: .5px;
     font-size: 15px;
@@ -994,6 +1067,65 @@
     font-weight: bold;
     letter-spacing: .5px;
     font-size: 15px;
+}
+.categoryQuantityTitleDashboard{
+    width: 60px;
+    letter-spacing: .5px;
+    font-size: 15px;
+}
+.categoryNameDash{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.bkColorNone{
+    background-color: transparent;
+    border-bottom: .5px solid #ddd;
+    border-radius: 0px;
+}
+.categoryNameDash p{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .3s ease-in-out;
+}
+.categoryNameDash p:hover{
+    color: green;
+}
+.productName{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 40%;
+}
+.productName p{
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.productName p a{
+    /* letter-spacing: .5px; */
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+.productName p a:hover{
+    color: green;
+}
+.productID{
+    width: 25%;
+    font-size: 14px;
+}
+.productPrice{
+    width: 11.5%;
+    font-size: 14px;
+}
+.productPriceDashboard{
+    width: 11.5%;
+    font-size: 14px;
+}
+.productImage{
+    height: 60px;
 }
 .categorySaleTitle{
     width: 20%;
@@ -1082,7 +1214,22 @@
     background-color: white;
     color: green;
 }
-
+.TeaCupHolder img{
+    height: 20px;
+}
+.TeaCupHolder{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+.TeaCupHolder p{
+    padding-top: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
 
 
 
@@ -1104,10 +1251,10 @@
 
 
 .addProduct_page{
-    /* display: none; */
+    display: none;
 }
 .dashboard_container{
-    display: none;
+    /* display: none; */
 }
 .addCategory_page{
     display: none;
@@ -1116,5 +1263,11 @@
     display: none;
 }
 .categoryList_page{
+    display: none;
+}
+.productList_page{
+    display: none;
+}
+.productUnderAcategory_page{
     display: none;
 }

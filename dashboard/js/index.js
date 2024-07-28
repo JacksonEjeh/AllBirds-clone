@@ -24,7 +24,7 @@ $(document).ready(function() {
       });
 
       $('.display').val(selectedTags)
-      console.log('Selected Tags:', selectedTags);
+    //   console.log('Selected Tags:', selectedTags);
       // You can use selectedTags array as per your requirement
     });
 });
@@ -37,6 +37,7 @@ $(document).ready(function(){
         $('.addProduct_page').hide()
         $('.addCategory_page').hide()
         $('.categoryList_page').hide()
+        $('.productList_page').hide()
 
         $('.dashboard').toggleClass('active')
         $('.orders').removeClass('active')
@@ -144,19 +145,29 @@ $(document).ready(function(){
         $('.dashboard_container').hide()
         $('.addCategory_page').hide()
         $('.categoryList_page').hide()
+        $('.productList_page').hide()
         $('.addProduct_page').show()
     })
     $(document).on('click', '#newCategory', function(){
         $('.dashboard_container').hide()
         $('.addProduct_page').hide()
         $('.categoryList_page').hide()
+        $('.productList_page').hide()
         $('.addCategory_page').show()
     })
     $(document).on('click', '#categoryList', function(){
         $('.dashboard_container').hide()
         $('.addProduct_page').hide()
         $('.addCategory_page').hide()
+        $('.productList_page').hide()
         $('.categoryList_page').show()
+    })
+    $(document).on('click', '#productList', function(){
+        $('.dashboard_container').hide()
+        $('.addProduct_page').hide()
+        $('.addCategory_page').hide()
+        $('.categoryList_page').hide()
+        $('.productList_page').show()
     })
 
 
@@ -207,8 +218,13 @@ $(document).ready(function(){
                 method: 'POST',
                 data: categoryDetails,
                 success: function(res){
-                    console.log(res);
-                    // window.location.reload()
+                    // console.log(res);
+                    window.location.reload()
+                    $('.dashboard_container').hide()
+                    $('.addProduct_page').hide()
+                    $('.addCategory_page').hide()
+                    $('.productList_page').hide()
+                    $('.categoryList_page').show()
                     alert('New category created')
                 },
                 error: function(err){
@@ -259,6 +275,7 @@ $(document).ready(function(){
             url: `${endPoint}/categories?merchant_id=${merchant_id}`,
             method: 'GET',
             success: function(res){
+                localStorage.setItem("categories", JSON.stringify(res)) || []
                 res.forEach(function(i){
                     $('.categoryList_container').append(`
                         <div class="categoryList" data-id ="${i.id}">
@@ -292,6 +309,37 @@ $(document).ready(function(){
         })
     }
     getAllCategories()
+
+    //function for getting all categories on dashboard
+    function getAllCategoriesOnDashboard(){
+        $('.categoryTitle_holder_dashboard').empty()
+        
+        $.ajax({
+            url: `${endPoint}/categories?merchant_id=${merchant_id}`,
+            method: 'GET',
+            success: function(res){
+                localStorage.setItem("categories", JSON.stringify(res)) || []
+                res.forEach(function(i){
+                    $('.categoryTitle_holder_dashboard').append(`
+
+                        <div class="categoryListDashboard">
+                            <div class="categoryNameDash">
+                                <img class="categoryImage" src="${i.image}" alt="">
+                                <p>${i.name}</p>
+                            </div>
+                            <div class="categoryQuantityTitleDashboard">
+                                $${i.total_earned}.00
+                            </div>
+                        </div>
+                    `)
+                })
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    getAllCategoriesOnDashboard()
 
     // function to toggle me edit/delete dropdow 
     $(document).on("click", "#dot", function () {
@@ -419,10 +467,9 @@ $(document).ready(function(){
         arrayOfProductImage.push(image1, image2, image3)
 
         var refund = $('#refund').is(':checked')
-        var discount = $('#discount').is(':checked')
+        var discountCheck = $('#discount').is(':checked')
         var shipment = $('#shipment').is(':checked')
         var category_id = $('#category').val()
-        console.log(category_id);
 
         let productInfo = {
             title: $('#productTitle').val(),
@@ -435,17 +482,22 @@ $(document).ready(function(){
             min_qty: $('#minQty').val(),
             max_qty: $('#maxQty').val(),
             has_refund_policy: refund,
-            has_discount: discount,
+            has_discount: discountCheck,
             has_shipment: shipment,
             discount: $('#discountRate').val(),
             discount_expiration: $('#discountExpiry').val(),
             images: arrayOfProductImage,
             shipping_locations: arrayOfShippingLocation,
+            shipping_text: $('#shippingText').val(),
             category_id: category_id,
             merchant_id: merchant_id
         } 
 
         let valid =  true
+
+        if (productInfo.has_refund_policy) {
+            localStorage.setItem("refund", productInfo.has_refund_policy)
+        }
         if (productInfo.title === "") {
             valid = false
             $('#addProduct_err').text('There,s an empty field in your form')
@@ -498,7 +550,7 @@ $(document).ready(function(){
         } else if (image2 === "") {
             valid = false
             $('#addProduct_image2').addClass('errBorder')
-            $('#addProduct_image1').removelass('errBorder')
+            $('#addProduct_image1').removeClass('errBorder')
             $('.warn1').addClass('imgErr')
         } else if (image3 === "") {
             valid = false
@@ -506,28 +558,9 @@ $(document).ready(function(){
             $('#addProduct_image2').removeClass('errBorder')
             $('.warn1').addClass('imgErr')
 
-        }  else {
-            valid = true
-            $.ajax({
-                url: `${endPoint}/products`,
-                method: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(productInfo),
-                success: function(res){
-                    console.log(res);
-                    alert('product posted successful')
-                },
-                error: function(err){
-                    console.log(err);
-                }
-            })
-        }
+        } 
+        if (productInfo.has_discount === true) {
 
-        if (refund) {
-            localStorage.setItem("refund", JSON.stringify(refund))
-        }
-        
-        if (discount === true) {
             if (productInfo.discount === "") {
                 valid = false
                 $('#addProduct_err').text('There,s an empty field in your form')
@@ -536,18 +569,172 @@ $(document).ready(function(){
                 valid = false
                 $('#addProduct_err').text('There,s an empty field in your form')
                 $('#discountExpiry').addClass('errBorder')
+                $('#discountRate').removeClass('errBorder')
             }
-        }
-        if (shipment === true) {
+            
+
+        } 
+        if (productInfo.has_shipment === true) {
             if (shipLocation === "") {
                 valid = false
                 $('#searchInput').addClass('errBorder')
+                $('#addProduct_image3').removeClass('errBorder')
                 $('#shipLocationErr').text('You need to add at least a shipping location')
+            } else if (productInfo.shipping_text === "") {
+                valid = false
+                $('#shippingText').addClass('errBorder')
+                $('#searchInput').removeClass('errBorder')
+                $('#shipLocationErr').text('')
             }
+
+        } 
+        if (valid) {
+
+            $.ajax({
+                url: `${endPoint}/products`,
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(productInfo),
+                success: function(res){
+                    window.location.reload()
+                    $('.dashboard_container').hide()
+                    $('.addProduct_page').hide()
+                    $('.addCategory_page').hide()
+                    $('.categoryList_page').hide()
+                    $('.productList_page').show()
+                    alert('Product posted successful')
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
         }
-       
 
+    })
+
+    // geting all product from the api
+    function getAllProduct(){
+        $('.product_holder').empty()
+
+        $.ajax({
+            url: `${endPoint}/products?merchant_id=${merchant_id}`,
+            method: 'GET',
+            success: function(res){
+                let products = res.data
+                products.forEach(function(p){
+                    $('.product_holder').append(`
+                        <div class="productList">
+                                <div class="productName">
+                                    <img class="productImage" src="${p.image}" alt="">
+                                    <p><a href="#">${p.title}</a></p>
+                                </div>
+                                <div class="productID">
+                                    #${p.id}
+                                </div>
+                                <div class="productPrice">
+                                    $${p.price}
+                                </div>
+                                <div class="productPrice">
+                                    ${p.quantity}
+                                </div>
+                                <div class="productPrice">
+                                    ${p.total_sold}
+                                </div>
+                        </div>
+                    `) 
+                })
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    getAllProduct()
+    function getAllProductDashboard(){
+        $('.product_holderDashboard').empty()
+
+        $.ajax({
+            url: `${endPoint}/products?merchant_id=${merchant_id}`,
+            method: 'GET',
+            success: function(res){
+                let products = res.data
+                products.forEach(function(p){
+                    $('.product_holderDashboard').append(`
+                        <div class="productListDash">
+                            <div class="productNameTitleDashboard">
+                                <img class="productImage" src="${p.image}" alt="">
+                                <p>${p.title}</p>
+                            </div>
+                            <div class="productPriceDashboard">
+                                $${p.price}
+                            </div>
+                        </div>
+                    `) 
+                })
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    getAllProductDashboard()
+
+    // geting all product for a particular category
+    $(document).on('click', '.categorynnamme', function(e){
+        e.preventDefault()
+        $('.dashboard_container').hide()
+        $('.addProduct_page').hide()
+        $('.addCategory_page').hide()
+        $('.productList_page').hide()
+        $('.categoryList_page').hide()
+        $('.productUnderAcategory_page').show()
         
+        
+        let parent = $(this).parent().parent()
+        let category_id = parent.data('id')
+        
+        allProductInAcategory()
 
+        function allProductInAcategory(){
+            $('.categoryProducts').empty()
+            $('.nameOfCategory').empty()
+            $.ajax({
+                url: `${endPoint}/products?merchant_id=${merchant_id}&category_id=${category_id}`,
+                method: 'GET',
+                success: function(res){
+                    let categoryProducts = res.data
+                    categoryProducts.forEach(function(c){
+                        $('.categoryProducts').append(`
+                            <div class="productList">
+                                <div class="productName">
+                                    <img class="productImage" src="../images/shop/1_21.png" alt="">
+                                    <p>${c.title}</p>
+                                </div>
+                                <div class="productID">
+                                    ${c.id}
+                                </div>
+                                <div class="productPrice">
+                                    $${c.price}
+                                </div>
+                                <div class="productPrice">
+                                    ${c.quantity}
+                                </div>
+                                <div class="productPrice">
+                                    ${c.total_sold}
+                                </div>
+                            </div>
+                        `)
+
+                        $('.nameOfCategory').append(`
+                            <h3>All Products belonging to ${c.category.name} Category</h3>
+                        `)
+
+                    })
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
+        }
     })
 })
