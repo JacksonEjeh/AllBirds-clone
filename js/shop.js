@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    const endPoint = "http://ecommerce.reworkstaging.name.ng/v2" 
+
     $('.j_arrow').click(function(){
         $('.j_topbar_text').toggle()
         $('.j_topbar_text1').toggle()
@@ -194,7 +196,7 @@ $(document).ready(function(){
     })
 
 
-    $('#j_1Img').click(function(){
+    $(document).on('click', '#j_1Img', function(){
         $('#j_1Img').addClass('active2')
         $('#j_2Img').removeClass('active2')
         $('#j_3Img').removeClass('active2')
@@ -206,7 +208,7 @@ $(document).ready(function(){
         $('.j_4Img').fadeOut()
         $('.j_5Img').fadeOut()
     })
-    $('#j_2Img').click(function(){
+    $(document).on('click', '#j_2Img', function(){
         $('#j_2Img').addClass('active2')
         $('#j_1Img').removeClass('active2')
         $('#j_3Img').removeClass('active2')
@@ -217,7 +219,7 @@ $(document).ready(function(){
         $('.j_4Img').fadeOut()
         $('.j_5Img').fadeOut()
     })
-    $('#j_3Img').click(function(){
+    $(document).on('click', '#j_3Img',function(){
         $('#j_3Img').addClass('active2')
         $('#j_1Img').removeClass('active2')
         $('#j_2Img').removeClass('active2')
@@ -228,7 +230,7 @@ $(document).ready(function(){
         $('.j_4Img').fadeOut()
         $('.j_5Img').fadeOut()
     })
-    $('#j_4Img').click(function(){
+    $(document).on('click', '#j_4Img', function(){
         $('#j_4Img').addClass('active2')
         $('#j_1Img').removeClass('active2')
         $('#j_3Img').removeClass('active2')
@@ -239,7 +241,8 @@ $(document).ready(function(){
         $('.j_3Img').fadeOut()
         $('.j_5Img').fadeOut()
     })
-    $('#j_5Img').click(function(){
+    $(document).on('click', '#j_5Img', function(){
+        
         $('#j_5Img').addClass('active2')
         $('#j_1Img').removeClass('active2')
         $('#j_3Img').removeClass('active2')
@@ -284,4 +287,58 @@ $(document).ready(function(){
         window.location.href = "product_page2.html"
     })
 
+
+    let merchantsDetails = JSON.parse(localStorage.getItem("merchantLoginDetails"))
+
+    let merchant_id = merchantsDetails.id
+
+    function getAllProductOnUser(){
+        $('.jShopItemsHolder').empty()
+
+        $.ajax({
+            url: `${endPoint}/products?merchant_id=${merchant_id}`,
+            method: 'GET',
+            success: function(res){
+                let products = res.data
+                products.forEach(function(p){
+                    $('.jShopItemsHolder').append(`
+                        <div class="jShopItems" data-id="${p.id}">
+                            <div class="jShopItemImg">
+                                <img class="j_1Img" style="width: 100%;" src="${p.images}" alt="">
+                                <img class="j_2Img" style="width: 100%;" src="${p.images[1]}" alt="">
+                                <img class="j_3Img" style="width: 100%;" src="${p.images[2]}" alt="">
+                            </div>
+                            <div class="jShopItemTitle">
+                                <h4>${p.title}</h4>
+                                <p>$${p.price}</p>
+                            </div>
+                            <div class="jItemPreview">
+                                <div id="j_1Img" class="jPreview active2"><img style="height: 90%; width: 90%;" src="${p.images}" alt=""></div>
+                                <div id="j_2Img" class="jPreview"><img style="height: 90%; width: 90%;" src="${p.images[1]}" alt=""></div>
+                                <div id="j_3Img" class="jPreview"><img style="height: 90%; width: 90%;" src="${p.images[2]}" alt=""></div>
+                                <div class="jPreview1"><img style="height: 60%; width: 60%;" src="./images/shop/black_arror _right.svg" alt=""></div>
+                            </div>
+                            <div class="jsizes">
+                                <p class="jquick"><b>Quick Add</b></p>
+                                <div class="jSizeBoxHolder1">
+                                    <div class="jSizeBox1">8</div>
+                                    <div class="jSizeBox1">9</div>
+                                    <div class="jSizeBox1">9.5</div>
+                                    <div class="jSizeBox1">10</div>
+                                    <div class="jSizeBox1">11</div>
+                                    <div class="jSizeBox1">12</div>
+                                    <div class="jSizeBox1">13</div>
+                                    <div class="jSizeBox1">14</div>
+                                </div>
+                            </div>
+                        </div>
+                    `)
+                })
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    getAllProductOnUser()
 })

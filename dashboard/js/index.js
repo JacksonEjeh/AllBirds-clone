@@ -234,36 +234,6 @@ $(document).ready(function(){
         }
     })
 
-    // $('#addCategory').on('submit', function(e){
-    //     e.preventDefault()
-
-    //     var formData = new FormData(this)
-    //     let merchantsDetails = localStorage.getItem("merchantLoginDetails")
-    //     let _id = JSON.parse(merchantsDetails)
-    //     id = _id.id
-    //     if(id){
-    //         formData.append('merchant_id', id)
-    //     }
-    //     console.log(formData)
-
-
-    //     $.ajax({ 
-    //         url: `${endPoint}/categories`, 
-    //         method: 'POST', 
-    //         data: formData, 
-    //         processData: false, 
-    //         // contentType: false, 
-    //         success: function (response) { 
-    //             console.log(response);                      
-    //             alert('Your form has been sent successfully.'); 
-    //         }, 
-    //         error: function (error) {                        
-    //             alert('error.'); 
-    //             console.error(error); 
-    //         } 
-    //     });
-
-    // })
 
 
 
@@ -621,6 +591,7 @@ $(document).ready(function(){
             method: 'GET',
             success: function(res){
                 let products = res.data
+                localStorage.setItem("productDetails", JSON.stringify(products))    
                 products.forEach(function(p){
                     $('.product_holder').append(`
                         <div class="productList">
@@ -650,6 +621,8 @@ $(document).ready(function(){
         })
     }
     getAllProduct()
+
+    // geting all product from the api
     function getAllProductDashboard(){
         $('.product_holderDashboard').empty()
 
