@@ -40,7 +40,7 @@
                         </div>
                         <ul class="eCommerce_dropdown">
                             <li id="addProduct">Add Product</li>
-                            <li>Product List</li>
+                            <li id="productList">Product List</li>
                         </ul>
                     </div>
                     <div>
@@ -232,76 +232,60 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product_overview_contauiner">
-                        <div class="product_overview_title">
-                            <h3>Product overview</h2>
-                            <div class="viewAll">
-                                <p>View all</p>
-                                <img src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                    <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+                        <div class="product_overview_contauiner">
+                            <div class="product_overview_titleDash">
+                                <h3>Products overview</h3>
+                                <div class="viewAll">
+                                    <p>View all</p>
+                                    <img src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                                </div>
+                            </div>
+                            <div class="productTitle_holder bkColorNone" style="display: flex; justify-content: space-between;">
+                                <div class="productNameTitle">
+                                    Products
+                                </div>
+                                <div class="productPriceTitle">
+                                    Price
+                                </div>
+                            </div>
+                            <div class="product_holderDashboard">
+                                <div class="productListDash">
+                                    <div class="productNameTitleDashboard">
+                                        <img class="productImage" src="../images/shop/1_21.png" alt="">
+                                        <p>Men high tops</p>
+                                    </div>]
+                                    <div class="productPriceDashboard">
+                                        $58920
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="product_header">
-                            <h4>Name</h4>
-                            <div class="product_subheader">
-                                <h4>Product ID</h4>
-                                <h4>Price</h4>
-                                <h4>Quantity</h4>
-                            </div>
-                        </div>
-                        <div class="product_holder">
-                            <div class="product_container">
-                                <div class="product">
-                                    <img src="../images/shop/1_12.jpeg" alt="">
-                                    <p><a href="#">Men's Tree Loungers</a></p>
-                                </div>
-                                <div class="product_detail">
-                                    <p>#70668</p>
-                                    <p>$450</p>
-                                    <p>200</p>
+                        <div class="categoryList_holder">
+                            <div class="product_overview_titleDash">
+                                <h3>Categories overview</h2>
+                                <div class="viewAll">
+                                    <p>View all</p>
+                                    <img src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
                                 </div>
                             </div>
-                            <div class="product_container1">
-                                <div class="product">
-                                    <img src="../images/shop/1_20.jpeg" alt="">
-                                    <p><a href="#">Men's Tree Skippers</a></p>
+                            <div class="categoryTitle_holder bkColorNone" style="display: flex; justify-content: space-between;">
+                                <div class="categoryNameTitle">
+                                    Category
                                 </div>
-                                <div class="product_detail">
-                                    <p>#22739</p>
-                                    <p>$320</p>
-                                    <p>300</p>
+                                <div class="categoryQuantityTitle">
+                                    Total income
                                 </div>
                             </div>
-                            <div class="product_container1">
-                                <div class="product">
-                                    <img src="../images/shop/1_19.png" alt="">
-                                    <p><a href="#">Men's SuperLight Wool Runners</a></p>
-                                </div>
-                                <div class="product_detail">
-                                    <p>#22739</p>
-                                    <p>$320</p>
-                                    <p>300</p>
-                                </div>
-                            </div>
-                            <div class="product_container1">
-                                <div class="product">
-                                    <img src="../images/shop/1_15.png" alt="">
-                                    <p><a href="#">Men's Trail Runners SWT</a></p>
-                                </div>
-                                <div class="product_detail">
-                                    <p>#22739</p>
-                                    <p>$320</p>
-                                    <p>300</p>
-                                </div>
-                            </div>
-                            <div class="product_container1">
-                                <div class="product">
-                                    <img src="../images/shop/1_9.png" alt="">
-                                    <p><a href="#">Men's SuperLight Tree Runners</a></p>
-                                </div>
-                                <div class="product_detail">
-                                    <p>#22739</p>
-                                    <p>$320</p>
-                                    <p>300</p>
+                            <div class="categoryTitle_holder_dashboard">
+                                <div class="categoryListDashboard" style="display: flex; justify-content: space-between;">
+                                    <div class="categoryNameDash">
+                                        <img class="categoryImage" src="../images/shop/1_21.png" alt="">
+                                        <p>Men high tops</p>
+                                    </div>
+                                    <div class="categoryQuantityTitleDashboard">
+                                        1,630
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -376,11 +360,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="checbox_holder m-b">
-                                    <p class="checkbox_label">Return policy</p>
-                                    <input id="refund" type="checkbox">
+                            </div>
+                            <div class="rightAddProduct">
+                                <div class="product_images m-b">
+                                    <p class="product_name_label">Upload images</p>
+                                    <div class="image_input">
+                                        <input id="addProduct_image1" type="text" placeholder="Enter image1 url">
+                                        <input id="addProduct_image2" type="text" placeholder="Enter image2 url">
+                                        <input id="addProduct_image3" type="text" placeholder="Enter image3 url">
+                                    </div>
+                                    <p class="warn1">You need to add at least 3 images. Pay attention to the quality of the pictures you add, comply with the background color standards. Pictures must be in certain dimensions. Notice that the product shows all the details</p>
                                 </div>
-                                
                                 <div class="checbox_holder m-b">
                                     <p class="checkbox_label">Discount</p>
                                     <input id="discount" type="checkbox">
@@ -395,24 +385,13 @@
                                         <input id="discountExpiry" type="date">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="rightAddProduct">
-                                <div class="product_images m-b">
-                                    <p class="product_name_label">Upload images</p>
-                                    <div class="image_input">
-                                        <input id="addProduct_image1" type="text" placeholder="Enter image1 url">
-                                        <input id="addProduct_image2" type="text" placeholder="Enter image2 url">
-                                        <input id="addProduct_image3" type="text" placeholder="Enter image3 url">
-                                    </div>
-                                    <p class="warn1">You need to add at least 3 images. Pay attention to the quality of the pictures you add, comply with the background color standards. Pictures must be in certain dimensions. Notice that the product shows all the details</p>
-                                </div>
                                 <div class="checbox_holder m-b">
                                     <p class="checkbox_label">Shipment</p>
                                     <input id="shipment"  type="checkbox">
                                     <p id="shipLocationErr" class="errMsg1"></p>
                                 </div>
                                 <div class="shipping_location_holder m-b">
-                                    <div class="custom-select">
+                                    <div class="custom-select m-b">
                                         <p class="subProduct_name_label">Shipping locations <span style="font-weight: bold; color: red;">*</span></p>
                                         <input class="display" type="text" id="searchInput" placeholder="Select location">
                                         <div class="options-container">
@@ -439,12 +418,19 @@
                                         <!-- Add more tags as needed -->
                                       </div>
                                     </div>
+                                    <div class="product_price">
+                                        <p class="subProduct_name_label">Shipping text <span style="font-weight: bold; color: red;">*</span></p>
+                                        <input id="shippingText" type="text" placeholder="0%">
+                                    </div>
+                                </div>
+                                <div class="checbox_holder m-b">
+                                    <p class="checkbox_label">Return policy</p>
+                                    <input id="refund" type="checkbox">
                                 </div>
                                 <div class="checbox_holder m-b">
                                     <p class="checkbox_label">Variation</p>
                                     <input type="checkbox">
                                 </div>
-    
                                 <div>
                                     <p id="addProduct_err" class="errMsg1"></p>
                                     <button class="addProductBtn">Add product</button>
@@ -516,7 +502,7 @@
                                 <img src="../images/shop/search.svg" alt="">
                             </div>
                             <div class="addCategory_btn">
-                                <button>Add new</button>
+                                <button id="newCategory">Add new</button>
                             </div>
                         </div>
                         <div class="categoryTitle_holder">
@@ -548,6 +534,143 @@
                                             <li>Delete</li>
                                         </ul>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productList_page">
+                    <div class="product_overview_contauiner">
+                        <div class="TeaCupHolder">
+                            <img src="../images/icons/coffee.png" alt="">
+                            <p>
+                                Tip search by Product ID: Each product is provided with a unique ID, which you can rely on to find the exact product you need.</p>
+                        </div>
+                        <div class="categoryList_top">
+                            <div class="showing">
+                                <p>Showing</p>
+                                <select id="">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                </select>
+                                <p>entries</p>
+                            </div>
+                            <div class="searchBar">
+                                <input type="text" placeholder="Search here...">
+                                <img src="../images/shop/search.svg" alt="">
+                            </div>
+                            <div class="addCategory_btn">
+                                <button id="addProduct">Add new</button>
+                            </div>
+                        </div>
+                        <div class="productTitle_holder">
+                            <div class="productNameTitle">
+                                Products
+                            </div>
+                            <div class="productIdTitle">
+                                ProductID
+                            </div>
+                            <div class="productPriceTitle">
+                                Price
+                            </div>
+                            <div class="productQuantityTitle">
+                                Quantity
+                            </div>
+                            <div class="productQuantityTitle">
+                                Sale
+                            </div>
+                        </div>
+                        <div class="product_holder">
+                            <div class="productList">
+                                <div class="productName">
+                                    <img class="productImage" src="../images/shop/1_21.png" alt="">
+                                    <p>Men high tops</p>
+                                </div>
+                                <div class="productID">
+                                    89238932893289247478892
+                                </div>
+                                <div class="productPrice">
+                                    $58920
+                                </div>
+                                <div class="productPrice">
+                                    2000
+                                </div>
+                                <div class="productPrice">
+                                    2000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productUnderAcategory_page">
+                    <div class="product_overview_contauiner">
+                        <div class="product_overview_title">
+                            <div class="nameOfCategory">
+                                <h3>All Products under so!so!so! Category</h3>
+                            </div>
+                            <div class="viewAll">
+                                <p>View all</p>
+                                <img src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                            </div>
+                        </div>
+                        <div class="TeaCupHolder">
+                            <img src="../images/icons/coffee.png" alt="">
+                            <p>
+                                Tip search by Product ID: Each product is provided with a unique ID, which you can rely on to find the exact product you need.</p>
+                        </div>
+                        <div class="categoryList_top">
+                            <div class="showing">
+                                <p>Showing</p>
+                                <select id="">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                </select>
+                                <p>entries</p>
+                            </div>
+                            <div class="searchBar">
+                                <input type="text" placeholder="Search here...">
+                                <img src="../images/shop/search.svg" alt="">
+                            </div>
+                            <div class="addCategory_btn">
+                                <button id="addProduct">Add new</button>
+                            </div>
+                        </div>
+                        <div class="productTitle_holder">
+                            <div class="productNameTitle">
+                                Products
+                            </div>
+                            <div class="productIdTitle">
+                                ProductID
+                            </div>
+                            <div class="productPriceTitle">
+                                Price
+                            </div>
+                            <div class="productQuantityTitle">
+                                Quantity
+                            </div>
+                            <div class="productQuantityTitle">
+                                Sale
+                            </div>
+                        </div>
+                        <div class="product_holder categoryProducts">
+                            <div class="productList">
+                                <div class="productName">
+                                    <img class="productImage" src="../images/shop/1_21.png" alt="">
+                                    <p>Men high tops</p>
+                                </div>
+                                <div class="productID">
+                                    89238932893289247478892
+                                </div>
+                                <div class="productPrice">
+                                    $58920
+                                </div>
+                                <div class="productPrice">
+                                    2000
+                                </div>
+                                <div class="productPrice">
+                                    2000
                                 </div>
                             </div>
                         </div>
