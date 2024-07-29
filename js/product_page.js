@@ -50,4 +50,40 @@ $(document).ready(function() {
 
     // Initial button state check
     checkButtons();
+
+
+
+
+
+    const stars = $('.p-star-rating .fa-star');
+    const likeBtn = $('#like-btn');
+    let currentRating = 0;
+    
+    stars.on('mouseover', function () {
+        const index = $(this).data('index');
+        highlightStars(index);
+    });
+
+    stars.on('mouseout', function () {
+        highlightStars(currentRating);
+    });
+
+    stars.on('click', function () {
+        currentRating = $(this).data('index');
+        highlightStars(currentRating);
+    });
+
+    likeBtn.on('click', function () {
+        $(this).toggleClass('liked');
+    });
+
+    function highlightStars(index) {
+        stars.each(function (i) {
+            if (i < index) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+        });
+    }
 });

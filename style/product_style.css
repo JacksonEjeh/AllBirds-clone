@@ -637,4 +637,38 @@ footer {
 }
 /* END OF FOOTER CARD */
 
+.p-star-rating {
+    display: inline-block;
+    margin-right: 10px;
+}
 
+.p-star-rating .fa-star {
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.p-star-rating .fa-star:hover,
+.p-star-rating .fa-star.active {
+    color: #ffcc00;
+}
+
+#like-btn {
+    background: none;
+    border: none;
+    color: grey;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+#like-btn .fa-thumbs-up {
+    margin-right: 5px;
+}
+
+#like-btn.liked {
+    color: #dc3545;
+}
