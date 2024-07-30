@@ -197,38 +197,43 @@ $(document).ready(function(){
 
 
     $(document).on('click', '#j_1Img', function(){
-        $('#j_1Img').addClass('active2')
-        $('#j_2Img').removeClass('active2')
-        $('#j_3Img').removeClass('active2')
-        $('#j_4Img').removeClass('active2')
-        $('#j_5Img').removeClass('active2')
-        $('.j_1Img').fadeIn()
-        $('.j_2Img').fadeOut()
-        $('.j_3Img').fadeOut()
-        $('.j_4Img').fadeOut()
-        $('.j_5Img').fadeOut()
+        let holder = $(this).closest('.jShopItems')
+        $(this).addClass('active2')
+        holder.find('#j_2Img').removeClass('active2')
+        holder.find('#j_3Img').removeClass('active2')
+        holder.find('#j_4Img').removeClass('active2')
+        holder.find('#j_5Img').removeClass('active2')
+        holder.find('.j_1Img').fadeTo(200, 1)
+        holder.find('.j_2Img').fadeOut()
+        holder.find('.j_3Img').fadeOut()
+        holder.find('.j_4Img').fadeOut()
+        holder.find('.j_5Img').fadeOut()
     })
     $(document).on('click', '#j_2Img', function(){
-        $('#j_2Img').addClass('active2')
-        $('#j_1Img').removeClass('active2')
-        $('#j_3Img').removeClass('active2')
-        $('#j_4Img').removeClass('active2')
-        $('#j_5Img').removeClass('active2')
-        $('.j_2Img').fadeIn()
-        $('.j_3Img').fadeOut()
-        $('.j_4Img').fadeOut()
-        $('.j_5Img').fadeOut()
+        let holder = $(this).closest('.jShopItems')
+        $(this).addClass('active2')
+        holder.find('#j_1Img').removeClass('active2')
+        holder.find('#j_3Img').removeClass('active2')
+        holder.find('#j_4Img').removeClass('active2')
+        holder.find('#j_5Img').removeClass('active2')
+        holder.find('.j_2Img').fadeIn()
+        holder.find('.j_3Img').fadeOut()
+        holder.find('.j_4Img').fadeOut()
+        holder.find('.j_5Img').fadeOut()
+        holder.find('.j_1Img').fadeTo(200, 0)
     })
     $(document).on('click', '#j_3Img',function(){
-        $('#j_3Img').addClass('active2')
-        $('#j_1Img').removeClass('active2')
-        $('#j_2Img').removeClass('active2')
-        $('#j_4Img').removeClass('active2')
-        $('#j_5Img').removeClass('active2')
-        $('.j_3Img').fadeIn()
-        $('.j_2Img').fadeOut()
-        $('.j_4Img').fadeOut()
-        $('.j_5Img').fadeOut()
+        let holder = $(this).closest('.jShopItems')
+        $(this).addClass('active2')
+        holder.find('#j_1Img').removeClass('active2')
+        holder.find('#j_2Img').removeClass('active2')
+        holder.find('#j_4Img').removeClass('active2')
+        holder.find('#j_5Img').removeClass('active2')
+        holder.find('.j_3Img').fadeIn()
+        holder.find('.j_2Img').fadeOut()
+        holder.find('.j_4Img').fadeOut()
+        holder.find('.j_5Img').fadeOut()
+        holder.find('.j_1Img').fadeTo(200, 0)
     })
     $(document).on('click', '#j_4Img', function(){
         $('#j_4Img').addClass('active2')
@@ -292,6 +297,7 @@ $(document).ready(function(){
 
     let merchant_id = merchantsDetails.id
 
+    // geting all product on the shop page
     function getAllProductOnUser(){
         $('.jShopItemsHolder').empty()
 
@@ -303,14 +309,16 @@ $(document).ready(function(){
                 products.forEach(function(p){
                     $('.jShopItemsHolder').append(`
                         <div class="jShopItems" data-id="${p.id}">
-                            <div class="jShopItemImg">
-                                <img class="j_1Img" style="width: 100%;" src="${p.images}" alt="">
-                                <img class="j_2Img" style="width: 100%;" src="${p.images[1]}" alt="">
-                                <img class="j_3Img" style="width: 100%;" src="${p.images[2]}" alt="">
-                            </div>
-                            <div class="jShopItemTitle">
-                                <h4>${p.title}</h4>
-                                <p>$${p.price}</p>
+                            <div class="pointer">
+                                <div class="jShopItemImg">
+                                    <img class="j_1Img" style="width: 100%;" src="${p.images}" alt="">
+                                    <img class="j_2Img" style="width: 100%;" src="${p.images[1]}" alt="">
+                                    <img class="j_3Img" style="width: 100%;" src="${p.images[2]}" alt="">
+                                </div>
+                                <div class="jShopItemTitle">
+                                    <h4>${p.title}</h4>
+                                    <p>${p.currency} ${p.price}</p>
+                                </div>
                             </div>
                             <div class="jItemPreview">
                                 <div id="j_1Img" class="jPreview active2"><img style="height: 90%; width: 90%;" src="${p.images}" alt=""></div>
@@ -341,4 +349,21 @@ $(document).ready(function(){
         })
     }
     getAllProductOnUser()
+
+    $(document).on('click', '.pointer', function(){
+        let product_id = $(this).parent().data('id')
+        console.log(product_id);
+
+        $.ajax({
+            url: `${endPoint}/products/${product_id}`,
+            method: 'GET',
+            success: function(res){
+                console.log(res);
+                window.location.href = `product_page.html?id=${product_id}`
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    })
 })

@@ -29,6 +29,9 @@
     line-height: 14.3px;
     letter-spacing: 0.5px;
 }
+.pointer{
+    cursor: pointer;
+}
 .j_topbar_text1{
     text-align: center;
     color: white;

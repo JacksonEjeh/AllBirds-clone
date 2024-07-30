@@ -437,6 +437,7 @@ $(document).ready(function(){
         arrayOfProductImage.push(image1, image2, image3)
 
         var refund = $('#refund').is(':checked')
+        console.log(refund);
         var discountCheck = $('#discount').is(':checked')
         var shipment = $('#shipment').is(':checked')
         var category_id = $('#category').val()

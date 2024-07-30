@@ -3,9 +3,15 @@ $(document).ready(function () {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Add to Cart
-    $('.jproduct_addCart').on('click', function (e) {
+    $(document).on('click', '.jproduct_addCart', function (e) {
         const productId = $(this).data('product-id');
-        const product = { id: productId, name: "Men's Tree Runners", price: 98, quantity: 1, size: 8 };
+        const product = { 
+            id: productId, 
+            name: "Men's Tree Runners", 
+            price: 98, 
+            quantity: 1,
+            size: 8 
+        };
 
         const existingProduct = cart.find(item => item.id === productId);
         if (existingProduct) {
