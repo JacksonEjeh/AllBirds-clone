@@ -2,27 +2,52 @@ $(document).ready(function () {
     const endPoint = "http://ecommerce.reworkstaging.name.ng/v2";
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Add to Cart
-    $(document).on('click', '.jproduct_addCart', function (e) {
-        const productId = $(this).data('product-id');
-        const product = { 
-            id: productId, 
-            name: "Men's Tree Runners", 
-            price: 98, 
-            quantity: 1,
-            size: 8 
-        };
+     // Event Delegation for Add to Cart
+     $(document).on('click', '.jproduct_addCart', function() {
+        const productId = $(this).data('id');
+        console.log('Add to Cart clicked for product ID:', productId); // Debugging statement
+        $.ajax({
+            url: `${endPoint}/products/${productId}`,
+            method: 'GET',
+            success: function(res){
+                const product = res;
+                addToCart(product);
+            },
+            error: function(err){
+                console.error('Error fetching product details:', err); // Debugging statement
+            }
+        });
+    });
 
-        const existingProduct = cart.find(item => item.id === productId);
+    // Add to Cart
+    function addToCart(product) {
+        const existingProduct = cart.find(item => item.id === product.id);
+        
+       let price = product.price;
+
+       // Remove non-numeric characters if present
+       price = price.replace(/[^0-9.]/g, '');
+
+       // Parse the cleaned price string to a float
+       price = parseFloat(price);
+        
         if (existingProduct) {
             existingProduct.quantity += 1;
         } else {
-            cart.push(product);
+            const cartItem = {
+                id: product.id,
+                name: product.title,
+                price: price,
+                quantity: 1,
+                size: '9', // Assuming default size,
+                images: product.images
+            };
+            cart.push(cartItem);
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartUI();
-    });
+    }
 
     // Remove from Cart
     $(document).on('click', '.delete_cart_item', function (e) {
@@ -72,6 +97,8 @@ $(document).ready(function () {
         const cartDownContainer = $('.j_cart_down');
         cartItemsContainer.empty();
 
+        // console.log('Updating Cart UI. Current cart:', cart); // Debugging statement
+
         if (cart.length === 0) {
             cartEmptyContainer.show();
             cartDownContainer.hide();
@@ -83,7 +110,7 @@ $(document).ready(function () {
                 const cartItem = `
                     <div class="j_cart_item">
                         <div class="j_cart_img">
-                            <img style="height: 100%; width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_107,f_auto,q_auto/https://cdn.shopify.com/s/files/1/1104/4168/files/TR3MJBW080_SHOE_ANGLE_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                            <img style="height: 100%; width: 100%;" src="${item.images[0]}" alt="">
                         </div>
                         <div class="j_cart_title">
                             <div style="display: flex; justify-content: space-between;">
@@ -139,5 +166,5 @@ $(document).ready(function () {
     }
 
     // Initial load
-    updateCartUI();
+    updateCartUI(); 
 });

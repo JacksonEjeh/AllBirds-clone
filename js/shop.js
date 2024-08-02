@@ -305,13 +305,13 @@ $(document).ready(function(){
             url: `${endPoint}/products?merchant_id=${merchant_id}`,
             method: 'GET',
             success: function(res){
-                let products = res.data
+                let products = res.data;
                 products.forEach(function(p){
                     $('.jShopItemsHolder').append(`
                         <div class="jShopItems" data-id="${p.id}">
                             <div class="pointer">
                                 <div class="jShopItemImg">
-                                    <img class="j_1Img" style="width: 100%;" src="${p.images}" alt="">
+                                    <img class="j_1Img" style="width: 100%;" src="${p.images[0]}" alt="">
                                     <img class="j_2Img" style="width: 100%;" src="${p.images[1]}" alt="">
                                     <img class="j_3Img" style="width: 100%;" src="${p.images[2]}" alt="">
                                 </div>
@@ -321,10 +321,10 @@ $(document).ready(function(){
                                 </div>
                             </div>
                             <div class="jItemPreview">
-                                <div id="j_1Img" class="jPreview active2"><img style="height: 90%; width: 90%;" src="${p.images}" alt=""></div>
+                                <div id="j_1Img" class="jPreview active2"><img style="height: 90%; width: 90%;" src="${p.images[0]}" alt=""></div>
                                 <div id="j_2Img" class="jPreview"><img style="height: 90%; width: 90%;" src="${p.images[1]}" alt=""></div>
                                 <div id="j_3Img" class="jPreview"><img style="height: 90%; width: 90%;" src="${p.images[2]}" alt=""></div>
-                                <div class="jPreview1"><img style="height: 60%; width: 60%;" src="./images/shop/black_arror _right.svg" alt=""></div>
+                                <div class="jPreview1"><img style="height: 60%; width: 60%;" src="./images/shop/black_arror_right.svg" alt=""></div>
                             </div>
                             <div class="jsizes">
                                 <p class="jquick"><b>Quick Add</b></p>
@@ -339,14 +339,15 @@ $(document).ready(function(){
                                     <div class="jSizeBox1">14</div>
                                 </div>
                             </div>
+                            <button class="jproduct_addCart" data-id="${p.id}">Add to Cart</button>
                         </div>
-                    `)
-                })
+                    `);
+                });
             },
             error: function(err){
                 console.log(err);
             }
-        })
+        });
     }
     getAllProductOnUser()
 
