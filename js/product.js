@@ -258,7 +258,7 @@ $(document).ready(function(){
             url: `${endPoint}/products/${product_id}`,
             method: 'GET',
             success: function(res){
-                console.log(res);
+                // console.log(res);
                 let productDetailsHTML = `
                     <div class="jproduct_container" data-id="${res.id}">
                         <div class="jproduct_preview">
@@ -308,7 +308,6 @@ $(document).ready(function(){
                                     </div>
                                 </div>
                                 <div class="jproduct_rating">
-                                    <img src="/images/icons/rating.png" alt="">
                                     <p>
                                         <span class="p-star-rating">
                                             <i class="fa fa-star" data-index="1"></i>

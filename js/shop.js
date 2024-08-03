@@ -353,6 +353,7 @@ $(document).ready(function(){
     $(document).on('click', '.pointer', function(){
         let product_id = $(this).parent().data('id')
         console.log(product_id);
+        localStorage.setItem("productId", JSON.stringify(product_id))
 
         $.ajax({
             url: `${endPoint}/products/${product_id}`,
