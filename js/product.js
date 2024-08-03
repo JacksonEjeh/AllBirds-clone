@@ -354,7 +354,7 @@ $(document).ready(function(){
                                 <p class="sizeText">This style is available in whole sizes only. In between sizes? We recommend you size up. <a href="#">See Size Chart</a></p>
                                 <div class="jproduct_btn">
                                     SELECT A SIZE
-                                    <button class="jproduct_addCart" data-product-id="1">
+                                    <button class="jproduct_addCart" data-product-id="1" data-id="${res.id}">
                                         ADD TO CART - ${res.currency}${res.price}
                                     </button>
                                 </div>
