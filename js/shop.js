@@ -324,22 +324,21 @@ $(document).ready(function(){
                                 <div id="j_1Img" class="jPreview active2"><img style="height: 90%; width: 90%;" src="${p.images[0]}" alt=""></div>
                                 <div id="j_2Img" class="jPreview"><img style="height: 90%; width: 90%;" src="${p.images[1]}" alt=""></div>
                                 <div id="j_3Img" class="jPreview"><img style="height: 90%; width: 90%;" src="${p.images[2]}" alt=""></div>
-                                <div class="jPreview1"><img style="height: 60%; width: 60%;" src="./images/shop/black_arror_right.svg" alt=""></div>
+                                <div class="jPreview1"><img style="height: 40%; width: 40%;" src="./images/icons/arrow_right.png" alt=""></div>
                             </div>
                             <div class="jsizes">
                                 <p class="jquick"><b>Quick Add</b></p>
                                 <div class="jSizeBoxHolder1">
-                                    <div class="jSizeBox1">8</div>
-                                    <div class="jSizeBox1">9</div>
-                                    <div class="jSizeBox1">9.5</div>
-                                    <div class="jSizeBox1">10</div>
-                                    <div class="jSizeBox1">11</div>
-                                    <div class="jSizeBox1">12</div>
-                                    <div class="jSizeBox1">13</div>
-                                    <div class="jSizeBox1">14</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">8</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">9</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">9.5</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">10</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">11</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">12</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">13</div>
+                                    <div class="jSizeBox1" id="sizeAddToCart" data-id="${p.id}">14</div>
                                 </div>
                             </div>
-                            <button class="jproduct_addCart" data-id="${p.id}">Add to Cart</button>
                         </div>
                     `);
                 });

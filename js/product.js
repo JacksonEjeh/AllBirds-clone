@@ -309,20 +309,13 @@ $(document).ready(function(){
                                 </div>
                                 <div class="jproduct_rating">
                                     <p>
-                                        <span class="p-star-rating">
-                                            <i class="fa fa-star" data-index="1"></i>
-                                            <i class="fa fa-star" data-index="2"></i>
-                                            <i class="fa fa-star" data-index="3"></i>
-                                            <i class="fa fa-star" data-index="4"></i>
-                                            <i class="fa fa-star" data-index="5"></i>
-                                        </span>
                                         <button id="like-btn"><i class="fa fa-thumbs-up"></i> Like</button>
                                         <a href="#">(${res.like})</a>
                                     </p>
                                 </div>
                                 <div class="jproduct_type">
                                     <p  class="jclassic"><b>CLASSICS:</b></p>
-                                    <p class="jclassic">Jet Black (White Sole)</p>
+                                    <p class="jclassic">${res.brand}</p>
                                 </div>
                                 <div class="jproduct_color_holder">
                                     <div class="jproduct_color1"></div>
@@ -361,16 +354,34 @@ $(document).ready(function(){
                                 <p class="sizeText1">Free shipping on orders over $75. Free returns.*</p>
                                 <div class="jAllBirdHolder9">
                                     <div class="jAllBird9">
-                                        <h5>FIND IN STORE</h5>
+                                        <h5>Add a Review</h5>
                                         <div class="jUp_down9">
                                             <img class="jupArrow9" style="height: 15px;" src="./images/icons/arrow-down-sign-to-navigate.png" alt="">
                                             <img class="jdownArrow9" src="./images/icons/arrow-down-sign-to-navigate (1).png" alt="">
                                         </div>
                                     </div>
                                     <div class="jAllBirdHide9">
-                                        <p>
-                                            Please select a size to see availability at a store near you.
-                                        </p>
+                                        <form id="reviewBox1">
+                                            <div class="reviewGrid">
+                                                <div class="reviewBox">
+                                                    <p id="reviewError">Comment <span style="color: red;">*</span></p>
+                                                    <input id="reviewInput" type="text" placeholder="Add a comment">
+                                                </div>
+                                                <div class="reviewBox">
+                                                    <p id="rattingError">Ratings <span style="color: red;">*</span></p>
+                                                    <select name="" id="ratings">
+                                                        <option value="">Ratings</option>
+                                                        <option value="1">★☆☆☆☆</option>
+                                                        <option value="2">★★☆☆☆</option>
+                                                        <option value="3">★★★☆☆</option>
+                                                        <option value="4">★★★★☆</option>
+                                                        <option value="5">★★★★★</option>                                                      
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <button>ADD</button>
+                                            <p id="reviewErrorMsg"></p>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -397,4 +408,149 @@ $(document).ready(function(){
         })
     }
     getProductInfo()
+
+    const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    let userId = userDetails.id
+
+    // posting reviews and ratings to the API
+    $(document).on('submit', '#reviewBox1', function(e){
+        e.preventDefault()
+
+        let review ={
+            text: $('#reviewInput').val(),
+            product_id: product_id,
+            user_id: userId
+        }
+
+        let ratings ={
+            product_id: product_id,
+            user_id: userId,
+            value: $('#ratings').val()
+        }
+
+        let valid = true
+
+        if (review.text === "") {
+            valid= false
+            $('#reviewError').empty()
+            $('#reviewError').text(`Field can't be empty`).addClass('errColor')
+            $('#reviewInput').addClass('reviewErr')
+        } else if (ratings.value === "") {
+            valid = false
+            $('#reviewError').text(`Comment`).removeClass('errColor')
+            $('#rattingError').empty()
+            $('#rattingError').text(`Field can't be empty`).addClass('errColor')
+            $('#reviewInput').removeClass('reviewErr')
+            $('#ratings').addClass('reviewErr')
+        }
+            
+        if (valid) {
+
+            $.ajax({
+                url: `${endPoint}/reviews`,
+                method: 'POST',
+                data: review,
+                success: function(res){
+                    console.log(res);
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
+        }
+
+        if (valid) {
+            $.ajax({
+                url: `${endPoint}/ratings`,
+                method: 'POST',
+                data: ratings,
+                success:function(res){
+                    if (res.type === 'EXISTS') {
+                        $('#reviewErrorMsg').html('User already made a review/rating')
+                    } else{
+                        window.location.reload()
+                        window.location.href= '#reviewSection'
+                    }
+                },
+                error: function(err){
+                    console.log(err);
+                }
+            })
+        }
+    })
+
+    // function to get all reviews and rating
+    function getAllRatings(){
+
+        $.ajax({
+            url: `${endPoint}/ratings?product_id=${product_id}`,
+            method: 'GET',
+            success: function(res){
+                res.forEach(function(r){
+                    
+                    if (r.value === 1) {
+                        $('.star1').show()
+                    } else if (r.value === 2) {
+                        $('.star2').show()
+                    } else if (r.value === 3) {
+                        $('.star3').show()
+                    } else if (r.value === 4) {
+                        $('.star4').show()
+                    } else if (r.value === 5) {
+                        $('.star5').show()
+                    }
+                    $('.review-content').prepend(`
+                        <div class="star-rating">
+                            <span class="star1 starHolder">★☆☆☆☆</span>
+                            <span class="star2 starHolder">★★☆☆☆</span>
+                            <span class="star3 starHolder">★★★☆☆</span>
+                            <span class="star4 starHolder">★★★★☆</span>
+                            <span class="star5 starHolder">★★★★★</span>
+                        </div>
+                    `)
+                })
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    getAllRatings()
+
+
+    function getAllReviews(){
+        $('#reviewSection').empty()
+
+        $.ajax({
+            url: `${endPoint}/reviews?product_id=${product_id}`,
+            method: 'GET',
+            success: function(res){
+                res.forEach(function(r){
+                    $('#reviewSection').append(`
+                        <div class="review-container2">
+                            <div class="review-content">
+                                <h3>${r.text}...</h3>
+                                <p>${r.text}</p>
+                                <p>${r.created_at}</p>
+                            </div>
+                            <div class="reviewer-info">
+                                <p><strong>${r.user.first_name} ${r.user.last_name}.</strong> <em>Verified Buyer</em></p>
+                                <p>Activity Level: Walking, Running Errands, Traveling</p>
+                                <p>Overall Fit: Just Right</p>
+                                <p>Size Purchased: 9</p>
+                                <p>Typical Size: 9</p>
+                                <p>Typical Width: Average</p>
+                            </div>
+                        </div>
+                    `)
+                })
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    getAllReviews()
+
+    
 })

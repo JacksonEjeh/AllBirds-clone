@@ -17,6 +17,22 @@ $(document).ready(function () {
             }
         });
     });
+    // Event Delegation for Add to Cart
+     $(document).on('click', '#sizeAddToCart', function() {
+        const productId = $(this).data('id');
+        console.log('Add to Cart clicked for product ID:', productId); // Debugging statement
+        $.ajax({
+            url: `${endPoint}/products/${productId}`,
+            method: 'GET',
+            success: function(res){
+                const product = res;
+                addToCart(product);
+            },
+            error: function(err){
+                console.error('Error fetching product details:', err); // Debugging statement
+            }
+        });
+    });
 
     // Add to Cart
     function addToCart(product) {

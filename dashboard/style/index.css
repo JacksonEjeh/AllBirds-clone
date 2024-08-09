@@ -1119,6 +1119,8 @@
 .productPrice{
     width: 11.5%;
     font-size: 14px;
+    display: flex;
+    justify-content: space-between;
 }
 .productPriceDashboard{
     width: 11.5%;
@@ -1251,6 +1253,9 @@
 
 
 .addProduct_page{
+    display: none;
+}
+.editProduct_page{
     display: none;
 }
 .dashboard_container{

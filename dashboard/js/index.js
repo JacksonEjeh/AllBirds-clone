@@ -311,7 +311,7 @@ $(document).ready(function(){
     }
     getAllCategoriesOnDashboard()
 
-    // function to toggle me edit/delete dropdow 
+    // function to toggle my edit/delete dropdown
     $(document).on("click", "#dot", function () {
         $(this).siblings().toggle();
     });
@@ -333,6 +333,7 @@ $(document).ready(function(){
             }
         })
     })
+    
 
     // function for editing a particular category
     $(document).on('click', '#editCategory', function(){
@@ -411,9 +412,6 @@ $(document).ready(function(){
             $('.shipping_location_holder').slideToggle()
         }
     })
-    
-
-    
 
     // validating addProduct form field and API call
     $('#addProductForm').on('submit', function(event){
@@ -595,7 +593,7 @@ $(document).ready(function(){
                 localStorage.setItem("productDetails", JSON.stringify(products))    
                 products.forEach(function(p){
                     $('.product_holder').append(`
-                        <div class="productList">
+                        <div class="productList" data-id="${p.id}">
                                 <div class="productName">
                                     <img class="productImage" src="${p.image}" alt="">
                                     <p><a href="#">${p.title}</a></p>
@@ -611,6 +609,13 @@ $(document).ready(function(){
                                 </div>
                                 <div class="productPrice">
                                     ${p.total_sold}
+                                    <div class="dot">
+                                        <img id="dot" src="../images/icons/dot.png" alt="">
+                                        <ul class="dropdown">
+                                            <li id="editProduct">Edit</li>
+                                            <li id="deleteProduct">Delete</li>
+                                        </ul>
+                                    </div>
                                 </div>
                         </div>
                     `) 
@@ -622,6 +627,83 @@ $(document).ready(function(){
         })
     }
     getAllProduct()
+
+    // function for deleting a particular product
+    $(document).on('click', '#deleteProduct', function(){
+        let parent = $(this).parent().parent().parent().parent()
+        let id = parent.data('id')
+    
+        $.ajax({
+            url: `${endPoint}/products/${id}`,
+            method: 'DELETE',
+            success: function(res){
+                window.location.reload()
+                alert('Product deleted successfully')
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    })
+
+    // function for editing a particular product
+    // $(document).on('click', '#editProduct', function(){
+    //     $('.dashboard_container').hide()
+    //     $('.addProduct_page').hide()
+    //     $('.categoryList_page').hide()
+    //     $('.addCategory_page').hide()
+    //     $('.editCategory_page').hide()
+    //     $('.editProduct_page').show()
+
+    //     let parent = $(this).parent().parent().parent().parent()
+    //     let product_id = parent.data('id')
+
+    //     let categoryHolder = $(this).closest('.categoryList')
+    //     let categoryTitle = categoryHolder.find('.categorynnamme').text()
+    //     let image = categoryHolder.find('.categoryImage').attr('src')
+    //     // console.log(image);
+        
+    //     $('#editCategory_name').val(categoryTitle)
+    //     $('#editCategory_image').val(image)
+
+    //     $('#editProductForm').on('submit', function(e){
+    //         e.preventDefault()
+
+    //         let updatedCategoryTitle = $('#editCategory_name').val()
+    //         let updatedCategoryImage = $('#editCategory_image').val()
+
+    //         let updatedCategory = {
+    //           name: updatedCategoryTitle,
+    //           image: updatedCategoryImage
+    //         }
+
+    //         let valid = true
+
+    //         if (updatedCategory.name === "") {
+    //             valid = false
+    //             $('#nameErr1').show()
+    //         }else if (updatedCategory.image === "") {
+    //             valid = false
+    //             $('#imageErr1').show()
+    //             $('#nameErr1').hide()
+    //         }else{
+    //             valid
+                
+    //             $.ajax({
+    //                 url: `${endPoint}/products/${product_id}`,
+    //                 method: 'PUT',
+    //                 data: updatedCategory,
+    //                 success: function(res){
+    //                     console.log(res);
+    //                     window.location.reload()
+    //                 },
+    //                 error: function(err){
+    //                     console.log(err);
+    //                 }
+    //             })
+    //         }
+    //     })
+    // })
 
     // geting all product from the api
     function getAllProductDashboard(){
@@ -711,4 +793,36 @@ $(document).ready(function(){
             })
         }
     })
+
+    const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    let userId = userDetails.id
+
+    function likesMadeByUser(){
+
+        $.ajax({
+            url: `${endPoint}/users/likes?user_id=${userId}`,
+            method: 'GET',
+            success: function(res){
+                $('#totalLike').html(res.length )
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    likesMadeByUser()
+
+    function totalSales(){
+        $.ajax({
+            url: `${endPoint}/sales?merchant_id=${merchant_id}`,
+            method: 'GET',
+            success: function(res){
+                $('#totalSales').html(res.total)
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    }
+    totalSales()
 })
