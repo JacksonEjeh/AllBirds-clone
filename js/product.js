@@ -308,8 +308,8 @@ $(document).ready(function(){
                                     </div>
                                 </div>
                                 <div class="jproduct_rating">
+                                    <button id="like-btn"><i class="fa fa-thumbs-up"></i> Like</button>
                                     <p>
-                                        <button id="like-btn"><i class="fa fa-thumbs-up"></i> Like</button>
                                         <a href="#">(${res.like})</a>
                                     </p>
                                 </div>
@@ -479,35 +479,80 @@ $(document).ready(function(){
         }
     })
 
+    // posting like for a product to api
+    $(document).on('click', '#like-btn', function(){
+        $(this).toggleClass('liked');
+        let productId = $(this).closest('.jproduct_container').data('id')
+        // console.log(productId);
+
+        let likes = {
+            product_id: productId,
+            user_id: userId
+        }
+
+        $.ajax({
+            url: `${endPoint}/likes`,
+            method: 'POST',
+            data: likes,
+            success: function(res){
+                console.log(res);
+                window.location.reload()
+                localStorage.setItem("likesRespond", JSON.stringify(res))
+            },
+            error: function(err){
+                console.log(err);
+            }
+        })
+    })
+    
+    function userLike(){
+        let getUserLike = JSON.parse(localStorage.getItem('likesRespond'))
+        // console.log('runing');
+
+        if (getUserLike.type === "EXISTS") {
+
+            $('#like-btn').addClass('liked')
+        } else{
+            $('#like-btn').removeClass('liked')
+        }
+
+    } userLike()
+
+
     // function to get all reviews and rating
     function getAllRatings(){
-
+        $('.starHolder').hide()
         $.ajax({
             url: `${endPoint}/ratings?product_id=${product_id}`,
             method: 'GET',
             success: function(res){
                 res.forEach(function(r){
-                    
                     if (r.value === 1) {
+                        $('.review-content').html(`
+                            <span class="star1 starHolder">★☆☆☆☆</span>
+                        `)
                         $('.star1').show()
                     } else if (r.value === 2) {
+                        $('.review-content').html(`
+                            <span class="star2 starHolder">★★☆☆☆</span>
+                        `)
                         $('.star2').show()
                     } else if (r.value === 3) {
+                        $('.review-content').html(`
+                            <span class="star3 starHolder">★★★☆☆</span>
+                        `)
                         $('.star3').show()
                     } else if (r.value === 4) {
+                        $('.review-content').html(`
+                            <span class="star4 starHolder">★★★★☆</span>
+                        `)
                         $('.star4').show()
                     } else if (r.value === 5) {
+                        $('.review-content').html(`
+                            <span class="star5 starHolder">★★★★★</span>
+                        `)
                         $('.star5').show()
                     }
-                    $('.review-content').prepend(`
-                        <div class="star-rating">
-                            <span class="star1 starHolder">★☆☆☆☆</span>
-                            <span class="star2 starHolder">★★☆☆☆</span>
-                            <span class="star3 starHolder">★★★☆☆</span>
-                            <span class="star4 starHolder">★★★★☆</span>
-                            <span class="star5 starHolder">★★★★★</span>
-                        </div>
-                    `)
                 })
             },
             error: function(err){

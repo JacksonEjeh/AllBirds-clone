@@ -7,12 +7,23 @@
     display: flex;
     margin-top: 50px;
 }
+.jproduct_container_dash{
+    display: grid;
+    grid-template-columns: .5fr 5fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
 .jproduct_preview{
     width: 9%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+.jproduct_preview_dash{
+    display: grid;
+    gap: 10px;
+    align-items: center;
 }
 .jproduct_holder{
     width: 90%;
@@ -34,6 +45,12 @@
     width: 75px;
     background-color: #f5f5f5;
 }
+.jproduct_previewBox_dash{
+    cursor: pointer;
+    /* height: 100px; */
+    width: 90px;
+    background-color: #f5f5f5;
+}
 .jproduct_price{
     display: flex;
     align-items: center;
@@ -52,8 +69,13 @@
 .jproduct_rating{
     display: flex;
     align-items: center;
-    gap: 10px;
     margin-bottom: 25px;
+}
+.jproduct_type_dash{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
 }
 .jproduct_type{
     display: flex;
@@ -124,8 +146,14 @@
 }
 .jproduct_size_holder{
     display: flex;
+    flex-wrap: wrap;
     gap: 5px;
     margin-bottom: 20px;
+}
+.jproduct_size_holder_dash{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 .jclassic{
     font-size: 13px;
@@ -164,6 +192,23 @@
     letter-spacing: 1.5px;;
     font-family: sans-serif;
     margin-bottom: 10px;
+}
+.jproduct_btn_dash{
+    cursor: pointer;
+    width: 100%;
+    padding: 15px;
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;;
+    font-family: sans-serif;
+    transition: all .5s ease;
+}
+.jproduct_btn_dash:hover{
+    background-color: transparent;
+    color: green;
 }
 .jproduct_addCart{
     position: absolute;
@@ -277,6 +322,18 @@
     padding: 20px;
     border-bottom: 1px solid #ddd;
 }
+.jtreeRunner_title_dash{
+    background-color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.jtreeRunner_title_dash p{
+    font-size: 14px;
+}
+.jtreeRunner_title_dash div{
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
 
 
 
@@ -317,6 +374,13 @@
     letter-spacing: 1px;
     font-size: 14px;
     margin-bottom: 20px;
+    line-height: 20px;
+}
+.jhide_dash p{
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 14px;
+    margin-bottom: 10px;
     line-height: 20px;
 }
 .jAllBirdHide91{
@@ -469,6 +533,13 @@
     display: none;
 }
 
+.jhide914_dash p{
+    font-family: sans-serif;
+    letter-spacing: .5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
 .jhide914 p{
     font-family: sans-serif;
     letter-spacing: 1px;
@@ -518,6 +589,15 @@
     font-size: 14px;
 }
 
+.jposition_dash{
+    background-color: #f5f5f5;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
 .jposition{
     background-color: #f5f5f5;
     position: absolute;
@@ -717,9 +797,6 @@
 }
 .errColor{
     color: red;
-}
-.starHolder{
-    display: none;
 }
 #reviewErrorMsg{
     color: red;

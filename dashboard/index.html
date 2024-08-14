@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="../style/product.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -441,33 +442,33 @@
                 </div>
                 <div class="editProduct_page">
                     <form id="editProductForm">
-                        <div class="addProduct_container">
+                        <div class="editProduct_container">
                             <div class="leftAddProduct">
                                 <div class="product_name">
                                     <p class="product_name_label"><b>Product name <span style="font-weight: bold; color: red;">*</span></b></p>
-                                    <input id="productTitle" type="text" placeholder="Enter product name">
+                                    <input id="editproductTitle" type="text" placeholder="Enter product name">
                                     <p class="warn">Do not exceed 20 characters when entering the product name.</p>
                                 </div>
                                 <div class="product_category_container">
                                     <div class="product_price">
                                         <p class="product_name_label">Price <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input id="productPrice" type="text" placeholder="Enter price">
+                                        <input id="editproductPrice" type="text" placeholder="Enter price">
                                     </div>
                                     <div class="product_price">
                                         <p class="product_name_label">Brand <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input id="productBrand" type="text" placeholder="Enter Brand">
+                                        <input id="editproductBrand" type="text" placeholder="Enter Brand">
                                     </div>
                                     
                                 </div>
                                 <div class="product_description">
                                     <p class="product_name_label">Description <span style="font-weight: bold; color: red;">*</span></p>
-                                    <textarea id="productDescp" placeholder="Description"></textarea>
+                                    <textarea id="editproductDescp" placeholder="Description"></textarea>
                                     <p class="warn">Do not exceed 100 characters when entering the product name.</p>
                                 </div>
                                 <div class="product_category_container">
                                     <div class="product_brand">
                                         <p class="product_name_label">Currency <span style="font-weight: bold; color: red;">*</span></p>
-                                        <select name="" id="currency">
+                                        <select name="" id="editCurrency">
                                             <option value="">Choose currency</option>
                                             <option value="NGN">Nigeria (NGN)</option>
                                             <option value="USD">United State (USD)</option>
@@ -476,36 +477,7 @@
                                     </div>
                                     <div class="product_price">
                                         <p class="product_name_label">Quantity <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input id="quantity" type="number" placeholder="Enter quantity">
-                                    </div>
-                                </div>
-                                <div class="product_category m-b">
-                                    <p class="product_name_label">Category <span style="font-weight: bold; color: red;">*</span></p>
-                                    <select name="" id="category">
-                                        <option value="">Choose category</option>
-                                        <!-- adding category fron the js -->
-                                    </select>
-                                </div>
-                                <div class="product_category_container">
-                                    <div class="product_brand">
-                                        <p class="product_name_label">Min qty <span style="font-weight: bold; color: red;">*</span></p>
-                                        <select name="" id="minQty">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </div>
-                                    <div class="product_brand">
-                                        <p class="product_name_label">Max qty <span style="font-weight: bold; color: red;">*</span></p>
-                                        <select name="" id="maxQty">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
+                                        <input id="editQuantity" type="number" placeholder="Enter quantity">
                                     </div>
                                 </div>
                             </div>
@@ -513,75 +485,15 @@
                                 <div class="product_images m-b">
                                     <p class="product_name_label">Upload images</p>
                                     <div class="image_input">
-                                        <input id="addProduct_image1" type="text" placeholder="Enter image1 url">
-                                        <input id="addProduct_image2" type="text" placeholder="Enter image2 url">
-                                        <input id="addProduct_image3" type="text" placeholder="Enter image3 url">
+                                        <input id="editProduct_image1" type="text" placeholder="Enter image1 url">
+                                        <input id="editProduct_image2" type="text" placeholder="Enter image2 url">
+                                        <input id="editProduct_image3" type="text" placeholder="Enter image3 url">
                                     </div>
-                                    <p class="warn1">You need to add at least 3 images. Pay attention to the quality of the pictures you add, comply with the background color standards. Pictures must be in certain dimensions. Notice that the product shows all the details</p>
-                                </div>
-                                <div class="checbox_holder m-b">
-                                    <p class="checkbox_label">Discount</p>
-                                    <input id="discount" type="checkbox">
-                                </div>
-                                <div class="discount_holder m-b">
-                                    <div class="product_price">
-                                        <p class="subProduct_name_label">Rate <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input id="discountRate" type="text" placeholder="0%">
-                                    </div>
-                                    <div class="product_price">
-                                        <p class="subProduct_name_label">Expiry date <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input id="discountExpiry" type="date">
-                                    </div>
-                                </div>
-                                <div class="checbox_holder m-b">
-                                    <p class="checkbox_label">Shipment</p>
-                                    <input id="shipment"  type="checkbox">
-                                    <p id="shipLocationErr" class="errMsg1"></p>
-                                </div>
-                                <div class="shipping_location_holder m-b">
-                                    <div class="custom-select m-b">
-                                        <p class="subProduct_name_label">Shipping locations <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input class="display" type="text" id="searchInput" placeholder="Select location">
-                                        <div class="options-container">
-                                            <div class="option">
-                                                <input type="checkbox" class="checkbox" id="tag1" value="United State of America">
-                                                <label class="custom_label" for="tag1">United State of America</label>
-                                            </div>
-                                            <div class="option">
-                                                <input type="checkbox" class="checkbox" id="tag2" value="Nigeria">
-                                                <label class="custom_label" for="tag1">Nigeria</label>
-                                            </div>
-                                            <div class="option">
-                                                <input type="checkbox" class="checkbox" id="tag3" value="United Kingdom">
-                                                <label class="custom_label" for="tag2">United Kingdom</label>
-                                            </div>
-                                            <div class="option">
-                                                <input type="checkbox" class="checkbox" id="tag4" value="Ghana">
-                                                <label class="custom_label" for="tag2">Ghana</label>
-                                            </div>
-                                            <div class="option">
-                                                <input type="checkbox" class="checkbox" id="tag5" value="Egypy">
-                                                <label class="custom_label" for="tag3">Egypy</label>
-                                            </div>
-                                        <!-- Add more tags as needed -->
-                                      </div>
-                                    </div>
-                                    <div class="product_price">
-                                        <p class="subProduct_name_label">Shipping text <span style="font-weight: bold; color: red;">*</span></p>
-                                        <input id="shippingText" type="text" placeholder="0%">
-                                    </div>
-                                </div>
-                                <div class="checbox_holder m-b">
-                                    <p class="checkbox_label">Return policy</p>
-                                    <input id="refund" type="checkbox">
-                                </div>
-                                <div class="checbox_holder m-b">
-                                    <p class="checkbox_label">Variation</p>
-                                    <input type="checkbox">
+                                    <p class="editWarn1">You need to add at least 3 images. Pay attention to the quality of the pictures you add, comply with the background color standards. Pictures must be in certain dimensions. Notice that the product shows all the details</p>
                                 </div>
                                 <div>
-                                    <p id="addProduct_err" class="errMsg1"></p>
-                                    <button class="addProductBtn">Add product</button>
+                                    <p id="editProduct_err" class="errMsg1"></p>
+                                    <button class="addProductBtn">Update product</button>
                                 </div>
                             </div>
                         </div>
@@ -730,7 +642,7 @@
                             </div>
                         </div>
                         <div class="product_holder">
-                            <div class="productList">
+                            <!-- <div class="productList">
                                 <div class="productName">
                                     <img class="productImage" src="../images/shop/1_21.png" alt="">
                                     <p>Men high tops</p>
@@ -747,7 +659,7 @@
                                 <div class="productPrice">
                                     2000
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -824,9 +736,171 @@
                         </div>
                     </div>
                 </div>
+                <div class="productDetail_page">
+                    <div class="productDetailContainer">
+                        <div class="productImages_holderDash">
+                             <!-- coming  from the api -->
+                            <!-- <div class="jproduct_container_dash">
+                                <div class="jproduct_preview_dash">
+                                    <div class="jproduct_previewBox_dash jslide_in active_product"><img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_ANGLE_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in1"><img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_LEFT_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in2"><img style="width: 100%;" src="https://cdn.allbirds.com/image/upload/f_auto,q_auto,w_72,b_rgb:f5f5f5/cms/7hoT6fK4iMdjr8ikZ1Lj6W/71ef9f3f9d9c7c5644fcef3d9703a1da/24Q1-Spring-Ch1-Site-PDP-TR-M-Desktop-1600x1600.jpg" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in3"><img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_BACK_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in4"><img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_TOP_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in5"><img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://cdn.allbirds.com/video/upload/f_auto,q_auto,so_25p,fl_relative,w_0.5,l_play-button-png/cms/5otSnP6Ctef9FlftXHkcZ4/388d2a2c80c7a4c5dd3fc98427fc17e5/M_TR_BLACK_1_mp4_.jpg" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in6"><img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_BOTTOM_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt=""></div>
+                                    <div class="jproduct_previewBox_dash jslide_in7"><img style="width: 100%;"  src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_72,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_PAIR_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt=""></div>
+                                </div>
+                                <div class="jproduct_holder_dash">
+                                    <div class="jproduct_image">
+                                        <div id="jslide_in">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_829,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_ANGLE_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                                        </div>
+                                        <div id="jslide_in1" class="jposition_dash">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_1421,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_LEFT_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                                        </div>
+                                        <div id="jslide_in2"  class="jposition_dash">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/upload/f_auto,q_auto,b_rgb:f5f5f5,w_829/cms/7hoT6fK4iMdjr8ikZ1Lj6W/71ef9f3f9d9c7c5644fcef3d9703a1da/24Q1-Spring-Ch1-Site-PDP-TR-M-Desktop-1600x1600.jpg" alt="">
+                                        </div>
+                                        <div id="jslide_in3"  class="jposition_dash">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_829,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_BACK_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                                        </div>
+                                        <div id="jslide_in4" class="jposition_dash">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_829,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_TOP_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                                        </div>
+                                        <div id="jslide_in5" class="jposition_dash">
+                                            <video style="width: 100%;" src="https://cdn.allbirds.com/video/upload/f_auto,q_auto/cms/5otSnP6Ctef9FlftXHkcZ4/388d2a2c80c7a4c5dd3fc98427fc17e5/M_TR_BLACK_1_mp4_.mp4" preload="auto" autoplay loop></video>
+                                        </div>
+                                        <div id="jslide_in6"  class="jposition_dash">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_829,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_BOTTOM_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                                        </div>
+                                        <div id="jslide_in7"  class="jposition_dash">
+                                            <img style="width: 100%;" src="https://cdn.allbirds.com/image/fetch/q_auto,f_auto/w_1421,f_auto,q_auto/https://www.allbirds.com/cdn/shop/files/TR3MJBW080_SHOE_PAIR_GLOBAL_MENS_TREE_RUNNER_JET_BLACK_WHITE.png?v=1717710541" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="productDetailGrid">
+                            <div class="detail_holder_dash">
+                                <!-- coming  from the api -->
+                                <!-- <div class="jproduct_details_dash">
+                                    <h1 class="jproduct_title">Men's Tree Runners</h1>
+                                    <div class="jproduct_price">
+                                        <p>$98</p>
+                                        <div>
+                                            <p>FREE SHIPPING</p>
+                                        </div>
+                                    </div>
+                                    <div class="jproduct_type_dash">
+                                        <p  class="jclassic"><b>CLASSICS:</b></p>
+                                        <p class="jclassic">Jet Black (White Sole)</p>
+                                    </div>
+                                    <div class="jproduct_color_holder">
+                                        <div class="jproduct_color1"></div>
+                                        <div class="jproduct_color2"></div>
+                                        <div class="jproduct_color3"></div>
+                                        <div class="jproduct_color4"></div>
+                                        <div class="jproduct_color5"></div>
+                                    </div>
+                                    <p class="jclassic"><b>SELECT SIZE:</b></p>
+                                    <div class="jproduct_size_holder_dash">
+                                        <div class="jproduct_size black1">8</div>
+                                        <div class="jproduct_size black2">9</div>
+                                        <div class="jproduct_size black3">10</div>
+                                        <div class="jproduct_size black4">11</div>
+                                        <div class="jproduct_size black5">12</div>
+                                        <div class="jproduct_size black6">13</div>
+                                        <div class="jproduct_size black7">14</div>
+                                        <div class="jproduct_size black7">14</div>
+                                        <div class="jproduct_size black7">14</div>
+                                    </div>
+                                </div> -->
+                            </div>    
+                            <div class="rightProductDetail">
+                                <div class="review_dash">
+                                    <div class="totalReview_dash">
+                                        <!-- coming  from the api -->
+                                        <!-- <h4>Total Reviews:(5)</h4> -->
+                                    </div>
+                                    <div class="comment_holder_dash">
+                                        <div class="comment_dash">
+                                            <div class="review_holder_dash">
+                                                <!-- coming  from the api -->
+                                                <!-- <div class="reviewContainer_dash">
+                                                <div class="text_head_dash">
+                                                    <p><b>Jackson Gabriel:</b> <span style="font-size: 12px; letter-spacing: .5px; color: blue; font-style: oblique;">Verified Buyer</span></p> 
+                                                    <p style="font-size: 12px;"><b>Date:</b> <span>27-10-2024</span></p>
+                                                </div>
+                                                <div class="text_dash">
+                                                    <p>I really like this product, it is very comfortable and also cheap. i would recommend any day, any time.</p> 
+                                                </div>
+                                            </div> -->
+                                            </div>
+                                            <div class="rating_dash">
+                                                <!-- coming  from the api -->
+                                                <!-- ★★★★☆ -->
+                                            </div>
+                                        </div>
+                                        <div class="noComment_holder">
+                                            <h2>No Review yet</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="like_holderDash">
+                                    <!-- coming  from the api -->
+                                    <!-- <div class="total_like">
+                                        <div class="">
+                                            <h4>Total likes:(251)</h4>
+                                        </div>
+                                        <div class="like_dash">
+                                            <img src="../images/icons/love.png" alt="">
+                                            <p>Liked by <b>Jackson</b> and <b>250 others</b></p>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="description_dash">
+                                    <!-- coming  from the api -->
+                                    <!-- <div class="jAllBirdHolder91">
+                                        <div class="jAllBird91">
+                                            <h5>DESCRIPTION</h5>
+                                            <div class="jUp_down91">
+                                                <img class="jupArrow91" style="height: 15px;" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                                                <img class="jdownArrow91" src="../images/icons/arrow-down-sign-to-navigate (1).png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="jAllBirdHide91 jhide_dash">
+                                            <p>Our breathable, silky-smooth sneaker made with responsibly sourced eucalyptus tree fiber treads lightly in everything you do</p>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="jAllBirdHolder914">
+                                    <div class="jAllBird914">
+                                        <h5>SHIPPING & RETURNS</h5>
+                                        <div class="jUp_down914">
+                                            <img class="jupArrow914" style="height: 15px;" src="../images/icons/arrow-down-sign-to-navigate.png" alt="">
+                                            <img class="jdownArrow914" src="../images/icons/arrow-down-sign-to-navigate (1).png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="jAllBirdHide914 jhide914_dash">
+                                        <p>Free shipping on orders over $75, and free returns accepted within 30 days. Lightly worn shoes get donated to Soles4Souls. Visit our Returns Portal.*</p>
+                                        <p>Final Sale items cannot be returned or exchanged. Final Sale items include: gift cards, insoles, and items tagged final sale on our website and in Allbirds retail stores.</p>
+                                        <p>Need it sooner? See if the style you want is available at a store near you.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addToCartBTN">
+                            <button class="jproduct_btn_dash">
+                                UPDATE PRODUCT
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script src="js/index.js"></script>
+    <script src="../js/product.js"></script>
 </body>
 </html>
